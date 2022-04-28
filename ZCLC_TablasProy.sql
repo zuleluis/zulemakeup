@@ -8,6 +8,7 @@ CREATE TABLE Clientes(
 	calle varchar(50),
 	numero int,
 	colonia varchar(50),
+	ciudad varchar(80),
 	numTel varchar(12)
 );
 
@@ -22,7 +23,7 @@ CREATE TABLE Servicios(
 -- Promociones existentes
 CREATE TABLE Promociones(
 	idPromocion serial primary key, 
-	nombrePromocion varchar(50),
+	nombrePromocion varchar(70),
 	precio float,
 	estado boolean
 );
@@ -88,15 +89,26 @@ CREATE TABLE Tipos(
 	nombre varchar(30)
 );
 
+-- El tipo de producto (base de maquillaje, corrector, contorno, paleta de ojos, entre otros)
+CREATE TABLE Marcas(
+	idMarca serial primary key,
+	nombre varchar(30)
+);
+
 -- Productos existentes
 CREATE TABLE Productos(
 	idProducto serial primary key,
+	fkMarca int,
 	nombreProducto varchar(50),
 	fkAplicacion int,
 	fkTipo int,
 	modelo varchar(40),
 	cantidad int,
 	agotado boolean,
+	
+	CONSTRAINT fk_Marca
+		FOREIGN KEY (fkMarca)
+			REFERENCES Marcas(idMarca),
 
 	CONSTRAINT fk_Aplicacion
 		FOREIGN KEY (fkAplicacion)
