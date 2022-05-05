@@ -1,7 +1,11 @@
 package datos.DAO;
 
 import datos.Conexion;
+import modelo.Citas;
+import modelo.Clientes;
 import modelo.Productos;
+import modelo.Promociones;
+import modelo.auxiliares.JoinCitas;
 import modelo.auxiliares.JoinProductos;
 import modelo.catalogos.Tipos;
 import modelo.catalogos.Aplicacion;
@@ -69,6 +73,38 @@ public class ProductosDAO {
         }
 
         return lista;
+    }
+
+    //Obtiene los productos por idProducto
+    public JoinProductos getProducto(int idProducto) throws SQLException{
+        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre as Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
+                "JOIN Marcas ON Productos.fkMarca = Marcas.idMarca\n" +
+                "JOIN Aplicacion ON Productos.fkAplicacion = Aplicacion.idAplicacion\n" +
+                "JOIN Tipos ON Productos.fkTipo = Tipos.idTipo\n" +
+                "WHERE idProducto = ?");
+        this.ps.setInt(1, idProducto);
+        this.rs = this.ps.executeQuery();
+
+        if (!this.rs.next()){
+            Conexion.close(rs);
+            Conexion.close(ps);
+            return null;
+        }
+
+        marca = new Marcas(rs.getString("Marca"));
+        tipo = new Tipos(rs.getString("Tipo"));
+        aplicacion = new Aplicacion(rs.getString("Aplicacion"));
+
+        producto = new Productos(rs.getString("nombreProducto"), rs.getString("modelo"), rs.getInt("cantidad"), rs.getBoolean("agotado"));
+
+        JoinProductos auxProducto = new JoinProductos(producto, marca, tipo, aplicacion);
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        System.out.println(auxProducto);
+
+        return auxProducto;
     }
 
 }

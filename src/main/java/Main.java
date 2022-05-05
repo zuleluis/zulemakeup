@@ -51,7 +51,10 @@ public class Main {
         //citasDAO.modificaFecha(1, java.sql.Date.valueOf("2022-05-05"));
 
         //Lista de productos
-        LinkedList<JoinProductos> lista = productosDAO.getProductos();
+        //LinkedList<JoinProductos> lista = productosDAO.getProductos();
+
+        //Mostrar producto por ID
+        JoinProductos producto = productosDAO.getProducto(1);
 
     }
 }
