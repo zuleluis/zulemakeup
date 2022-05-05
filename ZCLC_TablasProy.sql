@@ -53,6 +53,7 @@ CREATE TABLE Citas(
 	fkPromocion int,
 	importe float,
 	nota varchar(100),
+	borrar boolean,
 	
 	CONSTRAINT fk_Cliente
 		FOREIGN KEY (fkCliente)
