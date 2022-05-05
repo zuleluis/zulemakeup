@@ -64,7 +64,7 @@ public class CitasDAO {
 
     //Obtiene las citas por idCita
     public JoinCitas getCita(int idCita) throws SQLException{
-        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota FROM Citas\n" +
+        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
                 "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion\n" +
                 "WHERE idCita = ?");
@@ -91,6 +91,26 @@ public class CitasDAO {
         return auxCita;
     }
 
+    //Obtiene cita "primitiva", es decir, solamente de la tabla Citas
+    public Citas getCitaPrimitiva(int idCita) throws SQLException{
+        this.ps = this.connection.prepareStatement("SELECT * FROM Citas WHERE idCita = ?;");
+        this.ps.setInt(1, idCita);
+        this.rs = this.ps.executeQuery();
+
+        if (!this.rs.next()){
+            Conexion.close(rs);
+            Conexion.close(ps);
+            return null;
+        }
+
+        Citas auxCita = new Citas(rs.getInt("fkCliente"), rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"),  rs.getString("lugar"), rs.getInt("fkPromocion"), rs.getFloat("importe"), rs.getString("nota"), rs.getBoolean("borrar"));
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
     //Inserta una cita
     public void insertaCita(Citas cita) throws SQLException{
         this.ps = this.connection.prepareStatement("INSERT INTO Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
@@ -106,21 +126,40 @@ public class CitasDAO {
         //Conexion.close(ps);
     }
 
-    //Elimina una cita
+    //Elimina una cita. En realidad realizo un safe delete, para no borrar por completo los registros, solo "deshabilitarlos"
     public Citas eliminaCita (int idCita) throws SQLException{
-        Citas auxCita = getCita(idCita);
+        Citas auxCita = getCitaPrimitiva(idCita);
 
-        if (auxCliente == null){
+        if (auxCita == null){
             return null;
         }
 
-        this.ps = this.connection.prepareStatement ("DELETE FROM Clientes WHERE idCliente=?");
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET borrar = true WHERE idCita = ?");
 
-        this.ps.setInt(1,idCliente);
+        this.ps.setInt(1, idCita);
         this.ps.executeUpdate();
 
         Conexion.close(ps);
 
-        return auxCliente;
+        return auxCita;
+    }
+
+    //Modificar la fecha de una cita
+    public Citas modificaFecha (int idCita, Date fecha) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET fecha = ? WHERE idCita = ?");
+
+        this.ps.setDate(1, fecha);
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
     }
 }

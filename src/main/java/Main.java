@@ -1,9 +1,11 @@
 import datos.Conexion;
 import datos.DAO.CitasDAO;
 import datos.DAO.ClientesDAO;
+import datos.DAO.ProductosDAO;
 import modelo.Clientes;
 import modelo.auxiliares.JoinCitas;
 import modelo.Citas;
+import modelo.auxiliares.JoinProductos;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -13,6 +15,7 @@ public class Main {
         Connection connection = Conexion.getConnection();
         ClientesDAO clientesDAO = new ClientesDAO(connection);
         CitasDAO citasDAO = new CitasDAO(connection);
+        ProductosDAO productosDAO = new ProductosDAO(connection);
 
         //Mostrar lista de clientes
         //LinkedList<Clientes> lista = clientesDAO.getClientes();
@@ -40,5 +43,15 @@ public class Main {
         //Clientes cliente = new Clientes()
         //Citas cita = new Citas(1, "2022-05-05", "13:00:00", true, "Facultad de Ingenieria", 1, 250.00F, "Pestañas buchonas por favor");
         //citasDAO.insertaCita(cita);
+
+        //Elimina una cita
+        //Citas cita = citasDAO.eliminaCita(2);
+
+        //Modifica fecha de una cita
+        //citasDAO.modificaFecha(1, java.sql.Date.valueOf("2022-05-05"));
+
+        //Lista de productos
+        LinkedList<JoinProductos> lista = productosDAO.getProductos();
+
     }
 }

@@ -12,6 +12,7 @@ public class Citas implements Serializable {
     private int fkPromocion;
     private float importe;
     private String nota;
+    private boolean borrar;
 
     //Constructor vacío
     public Citas(){
@@ -19,7 +20,7 @@ public class Citas implements Serializable {
     }
 
     //Insertar
-    public Citas(int fkCliente, String fecha, String hora, boolean tipoLugar, String lugar, int fkPromocion, float importe, String nota){
+    public Citas(int fkCliente, String fecha, String hora, boolean tipoLugar, String lugar, int fkPromocion, float importe, String nota, boolean borrar){
         this.fkCliente = fkCliente;
         this.fecha = fecha;
         this.hora = hora;
@@ -28,6 +29,7 @@ public class Citas implements Serializable {
         this.fkPromocion = fkPromocion;
         this.importe = importe;
         this.nota = nota;
+        this.borrar = borrar;
     }
 
     //Mostrar
@@ -112,6 +114,14 @@ public class Citas implements Serializable {
         this.nota = nota;
     }
 
+    public boolean isBorrar() {
+        return borrar;
+    }
+
+    public void setBorrar(boolean borrar) {
+        this.borrar = borrar;
+    }
+
     @Override
     public String toString() {
         return "Citas{" +
@@ -124,6 +134,7 @@ public class Citas implements Serializable {
                 ", fkPromocion=" + fkPromocion +
                 ", importe=" + importe +
                 ", nota='" + nota + '\'' +
+                ", borrar=" + borrar +
                 '}';
     }
 }

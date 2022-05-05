@@ -2,24 +2,24 @@ package modelo.catalogos;
 
 import java.io.Serializable;
 
-public class Aplicacion implements Serializable {
-    private int idAplicacion;
+public class Marcas implements Serializable {
+    private int idMarca;
     private String nombre;
 
-    public Aplicacion(){
+    public Marcas(){
 
     }
 
-    public Aplicacion(String nombre){
+    public Marcas(String nombre){
         this.nombre = nombre;
     }
 
-    public int getIdAplicacion() {
-        return idAplicacion;
+    public int getIdMarca() {
+        return idMarca;
     }
 
-    public void setIdAplicacion(int idAplicacion) {
-        this.idAplicacion = idAplicacion;
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
     }
 
     public String getNombre() {
@@ -32,8 +32,8 @@ public class Aplicacion implements Serializable {
 
     @Override
     public String toString() {
-        return "Aplicacion{" +
-                "idAplicacion=" + idAplicacion +
+        return "Marcas{" +
+                "idMarca=" + idMarca +
                 ", nombre='" + nombre + '\'' +
                 '}';
     }

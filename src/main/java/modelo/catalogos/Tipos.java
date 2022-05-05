@@ -10,6 +10,10 @@ public class Tipos implements Serializable {
 
     }
 
+    public Tipos(String nombre){
+        this.nombre = nombre;
+    }
+
     public int getIdTipo() {
         return idTipo;
     }
