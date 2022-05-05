@@ -107,8 +107,8 @@ public class CitasDAO {
     }
 
     //Elimina una cita
-    public Clientes eliminaCita (int idCliente) throws SQLException{
-        Clientes auxCliente = getCliente(idCliente);
+    public Citas eliminaCita (int idCita) throws SQLException{
+        Citas auxCita = getCita(idCita);
 
         if (auxCliente == null){
             return null;
