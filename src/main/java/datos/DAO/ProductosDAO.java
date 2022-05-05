@@ -30,20 +30,20 @@ public class ProductosDAO {
     public LinkedList<JoinProductos> getProductos() throws SQLException {
         LinkedList<JoinProductos> lista = new LinkedList<>();
 
-        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre, Productos.nombreProducto, Aplicacion.nombre, Tipos.nombre, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
+        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre AS Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
                 "JOIN Marcas ON Productos.fkMarca = Marcas.idMarca\n" +
                 "JOIN Aplicacion ON Productos.fkAplicacion = Aplicacion.idAplicacion\n" +
                 "JOIN Tipos ON Productos.fkTipo = Tipos.idTipo\n");
         this.rs = ps.executeQuery();
 
         while (rs.next()){
-            String nombreMarca = rs.getString("nombre");
+            String nombreMarca = rs.getString("Marca");
             marca = new Marcas(nombreMarca);
 
-            String nombreTipo = rs.getString("nombre");
+            String nombreTipo = rs.getString("Tipo");
             tipo = new Tipos(nombreTipo);
 
-            String nombreAplicacion = rs.getString("nombre");
+            String nombreAplicacion = rs.getString("Aplicacion");
             aplicacion = new Aplicacion(nombreAplicacion);
 
             String nombreProducto = rs.getString("nombreProducto");
@@ -65,6 +65,7 @@ public class ProductosDAO {
         for(JoinProductos elemento: lista){
             String disponibilidad = (elemento.getProducto().isAgotado())? "Agotado" :"Disponible";
             System.out.println(elemento.getMarca().getNombre() + " - " + elemento.getProducto().getNombreProducto() + " - " + elemento.getAplicacion().getNombre() + " - " + elemento.getTipo().getNombre() + " - " + elemento.getProducto().getModelo() + " - " + elemento.getProducto().getCantidad() + " - " + disponibilidad);
+            //System.out.println(elemento.getMarca() + " - " + elemento.getProducto() + " - " +  elemento.getAplicacion() + " - " + elemento.getTipo());
         }
 
         return lista;
