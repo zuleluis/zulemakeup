@@ -19,6 +19,11 @@ public class Promociones implements Serializable {
         this.estado = estado;
     }
 
+    //Mostrar
+    public Promociones(String nombrePromocion){
+        this.nombrePromocion = nombrePromocion;
+    }
+
     public int getIdPromocion() {
         return idPromocion;
     }

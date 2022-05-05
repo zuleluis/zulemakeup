@@ -30,6 +30,16 @@ public class Citas implements Serializable {
         this.nota = nota;
     }
 
+    //Mostrar
+    public Citas(String fecha, String hora, boolean tipoLugar, String lugar, float importe, String nota){
+        this.fecha = fecha;
+        this.hora = hora;
+        this.tipoLugar = tipoLugar;
+        this.lugar = lugar;
+        this.importe = importe;
+        this.nota = nota;
+    }
+
     public int getIdCita() {
         return idCita;
     }

@@ -77,12 +77,11 @@ public class ClientesDAO {
         //Conexion.close(ps);
     }
 
-
     //Elimina un cliente
-    public Clientes eliminaCliente (int idCliente) throws SQLException {
+    public Clientes eliminaCliente (int idCliente) throws SQLException{
         Clientes auxCliente = getCliente(idCliente);
 
-        if (auxCliente == null) {
+        if (auxCliente == null){
             return null;
         }
 
@@ -95,5 +94,25 @@ public class ClientesDAO {
 
         return auxCliente;
     }
+
+    //Modificar el nombre de un cliente
+    public Clientes modificaNombre (int idCliente, String nombre) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET nombre = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, nombre);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
 
 }
