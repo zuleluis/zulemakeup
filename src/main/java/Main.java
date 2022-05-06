@@ -6,6 +6,7 @@ import modelo.Clientes;
 import modelo.auxiliares.JoinCitas;
 import modelo.Citas;
 import modelo.auxiliares.JoinProductos;
+import modelo.Productos;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -40,7 +41,6 @@ public class Main {
         //JoinCitas cita = citasDAO.getCita(2);
 
         //Registra una cita
-        //Clientes cliente = new Clientes()
         //Citas cita = new Citas(1, "2022-05-05", "13:00:00", true, "Facultad de Ingenieria", 1, 250.00F, "Pestañas buchonas por favor");
         //citasDAO.insertaCita(cita);
 
@@ -54,7 +54,17 @@ public class Main {
         //LinkedList<JoinProductos> lista = productosDAO.getProductos();
 
         //Mostrar producto por ID
-        JoinProductos producto = productosDAO.getProducto(1);
+        //JoinProductos producto = productosDAO.getProducto(1);
+
+        //Insertar producto
+        //Productos producto = new Productos(2, "Paleta de sombras Jasmine", 3, 25, null, 1, false);
+        //productosDAO.insertaProducto(producto);
+
+        //Elimina un producto
+        //Productos producto = productosDAO.eliminaProducto(9);
+
+        //Modifica fecha de una cita
+        //productosDAO.modificaNombre(10, "Paleta de sombras Jasmine");
 
     }
 }

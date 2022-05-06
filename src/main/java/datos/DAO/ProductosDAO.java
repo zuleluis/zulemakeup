@@ -102,7 +102,82 @@ public class ProductosDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
+        //System.out.println(auxProducto);
+        String disponibilidad = (auxProducto.getProducto().isAgotado())? "Agotado" :"Disponible";
+        System.out.println(auxProducto.getMarca().getNombre() + " - " + auxProducto.getProducto().getNombreProducto() + " - " + auxProducto.getAplicacion().getNombre() + " - " + auxProducto.getTipo().getNombre() + " - " + auxProducto.getProducto().getModelo() + " - " + auxProducto.getProducto().getCantidad() + " - " + disponibilidad);
+
+        return auxProducto;
+    }
+
+    //Obtiene producto "primitivo", es decir, solamente de la tabla Productos
+    public Productos getProductoPrimitivo(int idProducto) throws SQLException{
+        this.ps = this.connection.prepareStatement("SELECT * FROM Productos WHERE idProducto = ?;");
+        this.ps.setInt(1, idProducto);
+        this.rs = this.ps.executeQuery();
+
+        if (!this.rs.next()){
+            Conexion.close(rs);
+            Conexion.close(ps);
+            return null;
+        }
+
+        Productos auxProducto = new Productos(rs.getInt("fkMarca"), rs.getString("nombreProducto"), rs.getInt("fkAplicacion"), rs.getInt("fkTipo"), rs.getString("modelo"), rs.getInt("cantidad"), rs.getBoolean("agotado"));
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
         System.out.println(auxProducto);
+        return auxProducto;
+    }
+
+    //Inserta un producto
+    public void insertaProducto(Productos producto) throws SQLException{
+        this.ps = this.connection.prepareStatement("INSERT INTO Productos (fkMarca, nombreProducto, fkAplicacion, fkTipo, modelo, cantidad, agotado) VALUES (?, ?, ?, ?, ?, ?, ?);");
+        ps.setInt(1, producto.getFkMarca());
+        ps.setString(2, producto.getNombreProducto());
+        ps.setInt(3, producto.getFkAplicacion());
+        ps.setInt(4, producto.getFkTipo());
+        ps.setString(5, producto.getModelo());
+        ps.setInt(6, producto.getCantidad());
+        ps.setBoolean(7, producto.isAgotado());
+
+        ps.executeUpdate();
+        //Conexion.close(ps);
+    }
+
+    //Elimina una producto
+    public Productos eliminaProducto (int idProducto) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("DELETE FROM Productos WHERE idProducto=?");
+
+        this.ps.setInt(1, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar el nombre de un producto
+    public Productos modificaNombre(int idProducto, String nombre) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET nombreProducto = ? WHERE idProducto = ?");
+
+        this.ps.setString(1, nombre);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
 
         return auxProducto;
     }
