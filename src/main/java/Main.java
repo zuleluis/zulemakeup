@@ -1,14 +1,11 @@
 import datos.Conexion;
+
+import modelo.*;
 import datos.DAO.CitasDAO;
 import datos.DAO.ClientesDAO;
 import datos.DAO.ProductosDAO;
 import datos.DAO.PromocionesDAO;
-import modelo.Clientes;
-import modelo.auxiliares.JoinCitas;
-import modelo.Citas;
-import modelo.auxiliares.JoinProductos;
-import modelo.Productos;
-import modelo.Promociones;
+import datos.DAO.ServiciosDAO;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -20,6 +17,7 @@ public class Main {
         CitasDAO citasDAO = new CitasDAO(connection);
         ProductosDAO productosDAO = new ProductosDAO(connection);
         PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
+        ServiciosDAO serviciosDAO = new ServiciosDAO(connection);
 
         //Mostrar lista de clientes
         //LinkedList<Clientes> lista = clientesDAO.getClientes();
@@ -85,5 +83,20 @@ public class Main {
         //Modifica nombre de una promoción
         //promocionesDAO.modificaNombre(7, "Maquillaje social + transporte redondo");
 
+        //Mostrar lista de servicios
+        //LinkedList<Servicios> lista = serviciosDAO.getServicios();
+
+        //Mostrar servicio por id
+        //serviciosDAO.getServicio(2);
+
+        //Registra un servicio
+        //Servicios servicio = new Servicios("Nombre servicio", 300.00F, "Descripción del servicio");
+        //serviciosDAO.insertaServicio(servicio);
+
+        //Elimina un servicio
+        //serviciosDAO.eliminaServicio(11);
+
+        //Modifica nombre de un servicio
+        //serviciosDAO.modificaNombre(10, "Promoción");
     }
 }

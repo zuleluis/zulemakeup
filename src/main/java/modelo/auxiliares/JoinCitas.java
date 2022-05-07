@@ -1,7 +1,6 @@
 package modelo.auxiliares;
 
 import java.io.Serializable;
-import java.util.LinkedList;
 
 import modelo.Clientes;
 import modelo.Citas;
