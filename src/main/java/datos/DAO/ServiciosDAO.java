@@ -1,7 +1,6 @@
 package datos.DAO;
 
 import datos.Conexion;
-import modelo.Promociones;
 import modelo.Servicios;
 
 import java.sql.*;
