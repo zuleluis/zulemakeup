@@ -1,11 +1,7 @@
 package datos.DAO;
 
 import datos.Conexion;
-import modelo.Citas;
-import modelo.Clientes;
 import modelo.Productos;
-import modelo.Promociones;
-import modelo.auxiliares.JoinCitas;
 import modelo.auxiliares.JoinProductos;
 import modelo.catalogos.Tipos;
 import modelo.catalogos.Aplicacion;

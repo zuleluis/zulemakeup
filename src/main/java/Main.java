@@ -2,11 +2,13 @@ import datos.Conexion;
 import datos.DAO.CitasDAO;
 import datos.DAO.ClientesDAO;
 import datos.DAO.ProductosDAO;
+import datos.DAO.PromocionesDAO;
 import modelo.Clientes;
 import modelo.auxiliares.JoinCitas;
 import modelo.Citas;
 import modelo.auxiliares.JoinProductos;
 import modelo.Productos;
+import modelo.Promociones;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -17,6 +19,7 @@ public class Main {
         ClientesDAO clientesDAO = new ClientesDAO(connection);
         CitasDAO citasDAO = new CitasDAO(connection);
         ProductosDAO productosDAO = new ProductosDAO(connection);
+        PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
 
         //Mostrar lista de clientes
         //LinkedList<Clientes> lista = clientesDAO.getClientes();
@@ -65,6 +68,22 @@ public class Main {
 
         //Modifica fecha de una cita
         //productosDAO.modificaNombre(10, "Paleta de sombras Jasmine");
+
+        //Mostrar lista de promociones
+        //LinkedList<Promociones> lista = promocionesDAO.getPromociones();
+
+        //Mostrar promocion individual
+        //Promociones promocion = promocionesDAO.getPromocion(2);
+
+        //Registra una promoción
+        //Promociones promocion = new Promociones("Nombre promocion", 100.50F, false);
+        //promocionesDAO.insertaPromocion(promocion);
+
+        //Elimina una promoción
+        //promocionesDAO.eliminaPromocion(3);
+
+        //Modifica nombre de una promoción
+        //promocionesDAO.modificaNombre(7, "Maquillaje social + transporte redondo");
 
     }
 }
