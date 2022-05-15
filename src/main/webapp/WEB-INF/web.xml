@@ -10,8 +10,18 @@
     <servlet-class>controlador.clientes.ListaClientes</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>RegistrarCliente</servlet-name>
+    <servlet-class>controlador.clientes.RegistrarCliente</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
     <url-pattern>/ListaClientes</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarCliente</servlet-name>
+    <url-pattern>/RegistrarCliente</url-pattern>
   </servlet-mapping>
 </web-app>

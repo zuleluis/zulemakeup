@@ -13,7 +13,6 @@
         <table align="center">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Fecha de nacimiento</th>
                     <th>Dirección</th>
@@ -27,7 +26,6 @@
                 if (lista != null){
                     for (Clientes cliente : lista){
                         %><tr>
-                            <td><%out.print(cliente.getIdCliente()); %></td>
                             <td><%out.print(cliente.getNombre() + " " +  cliente.getApPaterno() + " " + cliente.getApMaterno());%></td>
                             <td><%out.print(cliente.getFechaNac());%></td>
                             <td><%out.print(cliente.getCalle() + " " + cliente.getNumero() + " " + cliente.getColonia());%></td>

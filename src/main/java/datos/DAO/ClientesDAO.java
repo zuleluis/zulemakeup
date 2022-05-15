@@ -25,7 +25,13 @@ public class ClientesDAO {
             String nombre = rs.getString("nombre");
             String apPaterno = rs.getString("apPaterno");
             String apMaterno = rs.getString("apMaterno");
-            cliente = new Clientes(nombre, apPaterno, apMaterno);
+            String fechaNac = rs.getString("fechaNac");
+            String calle = rs.getString("calle");
+            int numero = rs.getInt("numero");
+            String colonia = rs.getString("colonia");
+            String ciudad = rs.getString("ciudad");
+            String numTel = rs.getString("numTel");
+            cliente = new Clientes(nombre, apPaterno, apMaterno, fechaNac, calle, numero, colonia, ciudad, numTel);
             lista.add(cliente);
         }
 

@@ -10,6 +10,9 @@
     <nav class="navigation">
         <ul class="show">
             <li> <a href="/zulemakeup">Inicio</a> </li>
+            <li> <a href="/zulemakeup/Clientes/ListaClientes.jsp">Mostrar lista de clientes</a> </li>
+            <li> <a href="/zulemakeup/Clientes/RegistrarCliente.jsp">Registrar cliente</a> </li>
+
             <!-- <li> <a href="/citas.jsp">Citas</a></li>
             <li> <a href="/zulemakeup/clientes/ListaClientes.jsp">Clientes</a></li>
             <li> <a href="/servicios.jsp">Servicios</a></li>
