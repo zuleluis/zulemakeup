@@ -25,12 +25,11 @@ public class ListaClientes extends HttpServlet {
             ClientesDAO clientesDAO = new ClientesDAO(connection);
             request.getSession().setAttribute("datos", clientesDAO.getClientes());
             connection.close();
-
         } catch (SQLException e){
             request.getSession().setAttribute("datos", new LinkedList<Clientes>());
             e.printStackTrace();
         }
-        response.sendRedirect("/zulemakeup/clientes/ListaClientes.jsp");
+        response.sendRedirect("/zulemakeup/Clientes/ListaClientes.jsp");
 
     }
 }
