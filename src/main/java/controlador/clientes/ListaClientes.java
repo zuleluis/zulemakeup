@@ -1,6 +1,5 @@
 package controlador.clientes;
 
-import datos.Conexion;
 import datos.DAO.ClientesDAO;
 import modelo.Clientes;
 
@@ -14,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-@WebServlet(name = "ListaClientes", value = "/ListaClientes")
+@WebServlet(name = "ListaClientes", urlPatterns = {"/ListaClientes"})
 public class ListaClientes extends HttpServlet {
     @Resource(name = "jdbc/database")
     private DataSource conexion;
@@ -26,11 +25,12 @@ public class ListaClientes extends HttpServlet {
             ClientesDAO clientesDAO = new ClientesDAO(connection);
             request.getSession().setAttribute("datos", clientesDAO.getClientes());
             connection.close();
+
         } catch (SQLException e){
             request.getSession().setAttribute("datos", new LinkedList<Clientes>());
             e.printStackTrace();
         }
-        response.sendRedirect("/zulemakeup/Clientes/ListaClientes.jsp");
+        response.sendRedirect("/zulemakeup/clientes/ListaClientes.jsp");
 
     }
 }

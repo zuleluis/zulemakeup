@@ -1,9 +1,10 @@
 <%@ page import="modelo.Clientes" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Clientes</title>
+    <title>Lista de clientes</title>
 </head>
 <body>
 <main class="main">
@@ -34,13 +35,14 @@
                         </tr><%
                     }
                 }
-                else{
-                    response.sendRedirect("/ListaClientes");
+                else {
+                    response.sendRedirect("/zulemakeup/ListaClientes");
                 }
                 session.removeAttribute("datos");
             %>
         </table>
     </div>
 </main>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 </html>

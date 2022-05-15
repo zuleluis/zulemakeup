@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>ListaClientes</servlet-name>
+    <servlet-class>controlador.clientes.ListaClientes</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ListaClientes</servlet-name>
+    <url-pattern>/ListaClientes</url-pattern>
+  </servlet-mapping>
 </web-app>

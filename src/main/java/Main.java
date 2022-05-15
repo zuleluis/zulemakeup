@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        Connection connection = Conexion.getConnection();
+        //Connection connection = Conexion.getConnection();
         //ClientesDAO clientesDAO = new ClientesDAO(connection);
         //CitasDAO citasDAO = new CitasDAO(connection);
         //ProductosDAO productosDAO = new ProductosDAO(connection);
