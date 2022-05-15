@@ -99,14 +99,14 @@ INSERT INTO Productos (fkMarca, nombreProducto, fkAplicacion, fkTipo, modelo, ca
 (2, 'Jasmine', 3, 25, '', 1, false),
 (14, 'Pestañas postizas', 3, 27, '', 12, false);
 
-INSERT INTO Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota) VALUES
-(1, '2022-04-27', '17:00:00', false, '', 1, 320.00, 'Pestañas postizas largas, maquillaje cargado'),
-(2, '2022-04-28', '17:00:00', false, '', 1, 200.00, 'Pestañas pequeñas'),
-(3, '2022-04-28', '19:00:00', false, '', 1, 200.00, 'Vestido rosa, accesorios dorados'),
-(4, '2022-04-28', '11:00:00', true, 'UNPA', 1, 200.00, 'Maquillaje de graduación'),
-(3, '2022-04-29', '16:00:00', false, '', 1, 50.00, 'Depilación con perfilador'),
-(2, '2022-04-29', '12:00:00', false, '', 1, 120.00, 'Cabello corto'),
-(6, '2022-04-30', '08:00:00', true, 'Casa Puente Moreno', 4, 200.00, 'Maquillaje con glitter');
+INSERT INTO Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota, borrar) VALUES
+(1, '2022-04-27', '17:00:00', false, '', 1, 320.00, 'Pestañas postizas largas, maquillaje cargado', false),
+(2, '2022-04-28', '17:00:00', false, '', 1, 200.00, 'Pestañas pequeñas', false),
+(3, '2022-04-28', '19:00:00', false, '', 1, 200.00, 'Vestido rosa, accesorios dorados', false),
+(4, '2022-04-28', '11:00:00', true, 'UNPA', 1, 200.00, 'Maquillaje de graduación', false),
+(3, '2022-04-29', '16:00:00', false, '', 1, 50.00, 'Depilación con perfilador', false),
+(2, '2022-04-29', '12:00:00', false, '', 1, 120.00, 'Cabello corto', false),
+(6, '2022-04-30', '08:00:00', true, 'Casa Puente Moreno', 4, 200.00, 'Maquillaje con glitter', false);
 
 INSERT INTO CitasServicios(fkCita, fkServicio) VALUES
 (1, 1),
