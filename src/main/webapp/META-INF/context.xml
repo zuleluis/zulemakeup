@@ -1,0 +1,8 @@
+<Context>
+    <Resource name="jdbc/database" auth="Container" type="javax.sql.DataSource"
+              maxActive="30" maxIdle="7" maxWait="5000"
+              username="postgres" password="1234"
+              driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://localhost:5432/zulemakeup">
+    </Resource>
+</Context>
