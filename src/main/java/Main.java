@@ -23,7 +23,7 @@ public class Main {
         //LinkedList<Clientes> lista = clientesDAO.getClientes();
 
         //Obtiene cliente por ID
-        //Clientes cliente = clientesDAO.getCliente(1);
+        //Clientes cliente = clientesDAO.getCliente(99);
 
         //Registra a un cliente
         //Clientes cliente = new Clientes("nombre", "apPaterno", "apMaterno", "2000-11-01", "calle", 0, "colonia", "ciudad", "numTel");

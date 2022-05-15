@@ -22,7 +22,7 @@
             </thead>
             <%
                 LinkedList<Clientes> lista = (LinkedList)session.getAttribute("datos");
-                System.out.println(lista);
+                //System.out.println(lista);
                 if (lista != null){
                     for (Clientes cliente : lista){
                         %><tr>
