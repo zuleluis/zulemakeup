@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.LinkedList;
 
 @WebServlet(name = "BuscarCliente", urlPatterns = {"/BuscarCliente"})
 public class BuscarCliente extends HttpServlet {
@@ -30,12 +29,14 @@ public class BuscarCliente extends HttpServlet {
             Clientes cliente = clientesDAO.getCliente(idCliente);
 
             if (cliente != null){
+                request.getSession().setAttribute("idCliente", cliente.getIdCliente());
                 request.getSession().setAttribute("encontrado", true);
             }
             else{
+                request.getSession().setAttribute("idCliente", null);
                 request.getSession().setAttribute("encontrado", false);
             }
-
+            request.getSession().setAttribute("idCliente", null);
             request.getSession().setAttribute("datos", cliente);
             connection.close();
         } catch (SQLException e){

@@ -18,7 +18,19 @@ public class Clientes implements Serializable {
 
     }
 
-    // Insertar
+    public Clientes(int idCliente, String nombre, String apPaterno, String apMaterno, String fechaNac, String calle, int numero, String colonia, String ciudad, String numTel){
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.apPaterno = apPaterno;
+        this.apMaterno = apMaterno;
+        this.fechaNac = fechaNac;
+        this.calle = calle;
+        this.numero = numero;
+        this.colonia = colonia;
+        this.ciudad = ciudad;
+        this.numTel = numTel;
+    }
+
     public Clientes(String nombre, String apPaterno, String apMaterno, String fechaNac, String calle, int numero, String colonia, String ciudad, String numTel){
         this.nombre = nombre;
         this.apPaterno = apPaterno;
@@ -31,7 +43,6 @@ public class Clientes implements Serializable {
         this.numTel = numTel;
     }
 
-    //Mostrar
     public Clientes(String nombre, String apPaterno, String apMaterno){
         this.nombre = nombre;
         this.apPaterno = apPaterno;

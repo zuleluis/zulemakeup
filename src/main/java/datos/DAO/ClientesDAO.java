@@ -57,8 +57,16 @@ public class ClientesDAO {
             return null;
         }
 
-        Clientes auxCliente = new Clientes(rs.getString("nombre"), rs.getString("ApPaterno"), rs.getString("ApMaterno"));
-
+        Clientes auxCliente = new Clientes(rs.getInt("idCliente"),
+                rs.getString("nombre"),
+                rs.getString("apPaterno"),
+                rs.getString("apMaterno"),
+                rs.getString("fechaNac"),
+                rs.getString("calle"),
+                rs.getInt("numero"),
+                rs.getString("colonia"),
+                rs.getString("ciudad"),
+                rs.getString("numTel"));
         Conexion.close(rs);
         Conexion.close(ps);
 

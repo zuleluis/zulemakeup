@@ -20,6 +20,11 @@
     <servlet-class>controlador.clientes.BuscarCliente</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EliminarCliente</servlet-name>
+    <servlet-class>controlador.clientes.EliminarCliente</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
     <url-pattern>/ListaClientes</url-pattern>
@@ -33,5 +38,10 @@
   <servlet-mapping>
     <servlet-name>BuscarCliente</servlet-name>
     <url-pattern>/BuscarCliente</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EliminarCliente</servlet-name>
+    <url-pattern>/EliminarCliente</url-pattern>
   </servlet-mapping>
 </web-app>
