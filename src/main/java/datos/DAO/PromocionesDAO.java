@@ -2,6 +2,8 @@ package datos.DAO;
 
 import datos.Conexion;
 import modelo.Promociones;
+import modelo.Servicios;
+import modelo.auxiliares.PromoServicios;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -11,6 +13,7 @@ public class PromocionesDAO {
     private PreparedStatement ps;
     private ResultSet rs;
     private Promociones promocion;
+    private Servicios servicio;
 
     public PromocionesDAO(Connection connection){
         this.connection = connection;
@@ -72,6 +75,44 @@ public class PromocionesDAO {
         ps.setBoolean(3, promocion.isEstado());
         ps.executeUpdate();
         //Conexion.close(ps);
+    }
+
+    //Agregar servicios a una promoción
+    public void insertaPromoServicios(int idPromocion, int idServicio) throws SQLException{
+        this.ps = this.connection.prepareStatement("INSERT INTO PromoServicios(fkPromocion, fkServicio) VALUES (?, ?);");
+        ps.setInt(1, idPromocion);
+        ps.setInt(2, idServicio);
+        ps.executeUpdate();
+        //Conexion.close(ps);
+    }
+
+    //Muestra los servicios de una promoción
+    public LinkedList<PromoServicios> getPromoServicios(int idPromocion) throws SQLException{
+        LinkedList<PromoServicios> lista = new LinkedList<>();
+        this.ps = this.connection.prepareStatement("SELECT Servicios.nombreServicio FROM PromoServicios\n" +
+                "JOIN Servicios ON PromoServicios.fkServicio = Servicios.idServicio\n" +
+                "WHERE fkPromocion = ?");
+
+        this.ps.setInt(1, idPromocion);
+        this.rs = this.ps.executeQuery();
+
+        while (this.rs.next()){
+            servicio = new Servicios(rs.getString("nombreServicio"));
+            PromoServicios auxPromoServicio = new PromoServicios(servicio);
+
+            lista.add(auxPromoServicio);
+
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        System.out.println("La promoción incluye");
+        for(PromoServicios servicio: lista){
+            System.out.println(servicio);
+        }
+
+        return lista;
     }
 
     //Elimina una promocion

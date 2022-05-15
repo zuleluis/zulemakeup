@@ -12,9 +12,9 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        //Connection connection = Conexion.getConnection();
+        Connection connection = Conexion.getConnection();
         //ClientesDAO clientesDAO = new ClientesDAO(connection);
-        //CitasDAO citasDAO = new CitasDAO(connection);
+        CitasDAO citasDAO = new CitasDAO(connection);
         //ProductosDAO productosDAO = new ProductosDAO(connection);
         //PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
         //ServiciosDAO serviciosDAO = new ServiciosDAO(connection);
@@ -40,6 +40,12 @@ public class Main {
 
         //Muestra una cita individual
         //JoinCitas cita = citasDAO.getCita(2);
+
+        //Muestra los servicios de una cita
+        //citasDAO.getCitasServicios(1);
+
+        //Muestra las citas por cliente
+        //citasDAO.getCitasCliente(2);
 
         //Registra una cita
         //Citas cita = new Citas(1, "2022-05-05", "13:00:00", true, "Facultad de Ingenieria", 1, 250.00F, "Pestañas buchonas por favor");
@@ -83,6 +89,9 @@ public class Main {
         //Modifica nombre de una promoción
         //promocionesDAO.modificaNombre(7, "Maquillaje social + transporte redondo");
 
+        //Muestra los servicios que incluye una promoción
+        //promocionesDAO.getPromoServicios(4);
+
         //Mostrar lista de servicios
         //LinkedList<Servicios> lista = serviciosDAO.getServicios();
 
@@ -98,5 +107,8 @@ public class Main {
 
         //Modifica nombre de un servicio
         //serviciosDAO.modificaNombre(10, "Promoción");
+
+        //Agrega servicios a una cita
+        //citasDAO.insertaCitaServicios(2, 6);
     }
 }

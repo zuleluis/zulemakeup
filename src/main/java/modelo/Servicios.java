@@ -12,11 +12,14 @@ public class Servicios implements Serializable {
 
     }
 
-    //Insertar
     public Servicios(String nombreServicio, float precio, String descripcion){
         this.nombreServicio = nombreServicio;
         this.precio = precio;
         this.descripcion = descripcion;
+    }
+
+    public Servicios(String nombreServicio){
+        this.nombreServicio = nombreServicio;
     }
 
     public int getIdServicio() {

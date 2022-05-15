@@ -1,36 +1,50 @@
+//Modelo para los servicios que va a incluir cada cita
+
 package modelo.auxiliares;
 
 import java.io.Serializable;
 
+import modelo.Citas;
+import modelo.Servicios;
+
 public class CitasServicios implements Serializable {
-    private int fkCita;
-    private int fkServicio;
+    private Citas cita;
+    private Servicios servicio;
 
     public CitasServicios(){
 
     }
 
-    public int getFkCita() {
-        return fkCita;
+    public CitasServicios(Citas cita, Servicios servicio){
+        this.cita = cita;
+        this.servicio = servicio;
     }
 
-    public void setFkCita(int fkCita) {
-        this.fkCita = fkCita;
+    public CitasServicios(Servicios servicio){
+        this.servicio = servicio;
     }
 
-    public int getFkServicio() {
-        return fkServicio;
+    public Citas getCita() {
+        return cita;
     }
 
-    public void setFkServicio(int fkServicio) {
-        this.fkServicio = fkServicio;
+    public void setCita(Citas cita) {
+        this.cita = cita;
+    }
+
+    public Servicios getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(Servicios servicio) {
+        this.servicio = servicio;
     }
 
     @Override
     public String toString() {
         return "CitasServicios{" +
-                "fkCita=" + fkCita +
-                ", fkServicio=" + fkServicio +
+                "cita=" + cita +
+                ", servicio=" + servicio +
                 '}';
     }
 }

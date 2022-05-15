@@ -7,7 +7,10 @@ import datos.Conexion;
 import modelo.Citas;
 import modelo.Clientes;
 import modelo.Promociones;
+import modelo.Servicios;
+import modelo.auxiliares.CitasServicios;
 import modelo.auxiliares.JoinCitas;
+import modelo.auxiliares.PromoServicios;
 
 public class CitasDAO {
     private Connection connection;
@@ -16,6 +19,7 @@ public class CitasDAO {
     private Citas cita;
     private Clientes cliente;
     private Promociones promocion;
+    private Servicios servicio;
 
     public CitasDAO(Connection connection){
         this.connection = connection;
@@ -161,5 +165,66 @@ public class CitasDAO {
         Conexion.close(ps);
 
         return auxCita;
+    }
+
+    //Muestra los servicios brindados en una cita
+    public LinkedList<CitasServicios> getCitasServicios(int idCita) throws SQLException{
+        LinkedList<CitasServicios> lista = new LinkedList<>();
+        this.ps = this.connection.prepareStatement("SELECT Servicios.nombreServicio FROM CitasServicios\n" +
+                "JOIN Servicios ON CitasServicios.fkServicio = Servicios.idServicio\n" +
+                "WHERE CitasServicios.fkCita = ?");
+
+        this.ps.setInt(1, idCita);
+        this.rs = this.ps.executeQuery();
+
+        while (this.rs.next()){
+            servicio = new Servicios(rs.getString("nombreServicio"));
+            CitasServicios auxCitasServicios = new CitasServicios(servicio);
+
+            lista.add(auxCitasServicios);
+
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        System.out.println("La cita incluye");
+        for(CitasServicios servicio: lista){
+            System.out.println(servicio);
+        }
+
+        return lista;
+    }
+
+    //Muestra la lista de citas por cliente
+    public LinkedList<Citas> getCitasCliente(int idCliente) throws SQLException{
+        LinkedList<Citas> lista = new LinkedList<>();
+
+        this.ps = this.connection.prepareStatement("SELECT fecha, hora, tipoLugar, lugar, importe, nota, borrar FROM Citas\n" +
+                "WHERE fkCliente = 2");
+        this.rs = ps.executeQuery();
+
+        while (rs.next()){
+            Citas auxCita = new Citas(rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"), rs.getString("lugar"), rs.getFloat("importe"), rs.getString("nota"), rs.getBoolean("borrar"));
+            lista.add(auxCita);
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        for(Citas elemento: lista){
+            System.out.println(elemento);
+        }
+
+        return lista;
+    }
+
+    //Agregar servicios a una cita
+    public void insertaCitaServicios(int idCita, int idServicio) throws SQLException{
+        this.ps = this.connection.prepareStatement("INSERT INTO CitasServicios(fkCita, fkServicio) VALUES (?, ?);");
+        ps.setInt(1, idCita);
+        ps.setInt(2, idServicio);
+        ps.executeUpdate();
+        //Conexion.close(ps);
     }
 }
