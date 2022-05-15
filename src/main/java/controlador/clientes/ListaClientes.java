@@ -14,7 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-@WebServlet(name = "ListaClientes", urlPatterns = {"/ListaClientes"})
+@WebServlet(name = "ListaClientes", value = "/ListaClientes")
 public class ListaClientes extends HttpServlet {
     @Resource(name = "jdbc/database")
     private DataSource conexion;
