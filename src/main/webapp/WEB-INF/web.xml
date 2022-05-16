@@ -46,9 +46,10 @@
   </servlet>
 
   <servlet>
-    <servlet-name>ServiciosCliente</servlet-name>
-    <servlet-class>controlador.citas.ServiciosCliente</servlet-class>
+    <servlet-name>CancelarCita</servlet-name>
+    <servlet-class>controlador.citas.CancelarCita</servlet-class>
   </servlet>
+
 
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
@@ -91,8 +92,8 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>ServiciosCliente</servlet-name>
-    <url-pattern>/ServiciosCliente</url-pattern>
+    <servlet-name>CancelarCita</servlet-name>
+    <url-pattern>/CancelarCita</url-pattern>
   </servlet-mapping>
 
 </web-app>

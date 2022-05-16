@@ -52,6 +52,17 @@ public class Citas implements Serializable {
         this.borrar = borrar;
     }
 
+    public Citas(int idCita, String fecha, String hora, boolean tipoLugar, String lugar, float importe, String nota, boolean borrar){
+        this.idCita = idCita;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.tipoLugar = tipoLugar;
+        this.lugar = lugar;
+        this.importe = importe;
+        this.nota = nota;
+        this.borrar = borrar;
+    }
+
     public int getIdCita() {
         return idCita;
     }

@@ -25,12 +25,13 @@
             if (estado != null){
                 if (estado){
                     session.setAttribute("idCita", cita.getCita().getIdCita());
-        %><tr>
-            <td>Cliente: <%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></td>
-            <td>Fecha: <%out.print(cita.getCita().getFecha() + " - " + cita.getCita().getHora());%></td>
-            <td>Servicio a domicilio: <%if (cita.getCita().isTipoLugar()){out.print(cita.getCita().getLugar());} else out.print("No");%></td>
-            <td>Importe: <%out.print("$" + cita.getCita().getImporte());%></td>
-            <td>Nota: <%out.print(cita.getCita().getNota());%></td>
+            %><tr>
+            <tr>Cliente: <%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></tr>
+            <tr>Fecha: <%out.print(cita.getCita().getFecha() + " - " + cita.getCita().getHora());%></tr>
+            <tr>Servicio a domicilio: <%if (cita.getCita().isTipoLugar()){out.print(cita.getCita().getLugar());} else out.print("No");%></tr>
+            <tr>Importe: <%out.print("$" + cita.getCita().getImporte());%></tr>
+            <tr>Nota: <%out.print(cita.getCita().getNota());%></tr>
+            <tr>Estado: <%if (cita.getCita().isBorrar()) out.print("Cancelada"); else out.print("Activa");%></tr>
 
             <p/>
             <td>Servicios: </td>
@@ -51,7 +52,7 @@
             <form action="../index.jsp">
                 <p class="center-content"><input type="submit" value="Modificar"/></p>
             </form>
-            <form method="post" action="../index.jsp">
+            <form method="post" action="/zulemakeup/CancelarCita">
                 <p class="center-content"><input type="submit" value="Eliminar"/></p>
             </form>
             <%

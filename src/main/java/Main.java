@@ -54,7 +54,7 @@ public class Main {
         //citasDAO.insertaCita(cita);
 
         //Elimina una cita
-        //Citas cita = citasDAO.eliminaCita(2);
+        //Citas cita = citasDAO.eliminaCita(4);
 
         //Modifica fecha de una cita
         //citasDAO.modificaFecha(1, java.sql.Date.valueOf("2022-05-05"));

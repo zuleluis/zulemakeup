@@ -48,11 +48,12 @@ public class RegistrarCita extends HttpServlet {
             hora = hora + ":00";
 
             boolean checkbox;
+            boolean borrar = false;
 
             if (tipoLugar == null) checkbox = false;
             else checkbox = true;
 
-            Citas cita = new Citas(fkCliente, fecha, hora, checkbox, lugar, fkPromocion, importe, nota, false);
+            Citas cita = new Citas(fkCliente, fecha, hora, checkbox, lugar, fkPromocion, importe, nota, borrar);
             citasDAO.insertaCita(cita);
             connection.close();
         }

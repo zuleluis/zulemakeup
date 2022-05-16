@@ -29,7 +29,7 @@ public class CitasDAO {
     public LinkedList<JoinCitas> getCitas() throws SQLException{
         LinkedList<JoinCitas> lista = new LinkedList<>();
 
-        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota FROM Citas\n" +
+        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
                 "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion");
         this.rs = ps.executeQuery();
@@ -49,7 +49,8 @@ public class CitasDAO {
             String lugar = rs.getString("lugar");
             float importe = rs.getFloat("importe");
             String nota = rs.getString("nota");
-            cita = new Citas(fecha, hora, tipoLugar, lugar, importe, nota);
+            boolean borrar = rs.getBoolean("borrar");
+            cita = new Citas(fecha, hora, tipoLugar, lugar, importe, nota, borrar);
 
             JoinCitas auxCita = new JoinCitas(cliente, promocion, cita);
             lista.add(auxCita);
@@ -59,16 +60,16 @@ public class CitasDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(JoinCitas elemento: lista){
-            System.out.println(elemento);
-        }
+//        for(JoinCitas elemento: lista){
+//            System.out.println(elemento);
+//        }
 
         return lista;
     }
 
     //Obtiene las citas por idCita
     public JoinCitas getCita(int idCita) throws SQLException{
-        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
+        this.ps = this.connection.prepareStatement("SELECT Citas.idCita, Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
                 "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion\n" +
                 "WHERE idCita = ?");
@@ -83,14 +84,14 @@ public class CitasDAO {
 
         cliente = new Clientes(rs.getString("nombre"), rs.getString("apPaterno"), rs.getString("apMaterno"));
         promocion = new Promociones(rs.getString("nombrePromocion"));
-        cita = new Citas(rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"), rs.getString("lugar"), rs.getFloat("importe"), rs.getString("nota"));
+        cita = new Citas(rs.getInt("idCita"), rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"), rs.getString("lugar"), rs.getFloat("importe"), rs.getString("nota"), rs.getBoolean("borrar"));
 
         JoinCitas auxCita = new JoinCitas(cliente, promocion, cita);
 
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println("La cita con id " + idCita + " es: "  + auxCita.getCliente() + " " + auxCita.getCita() + " " + auxCita.getPromocion());
+        //System.out.println("La cita con id " + idCita + " es: "  + auxCita.getCliente() + " " + auxCita.getCita() + " " + auxCita.getPromocion());
 
         return auxCita;
     }
@@ -188,10 +189,10 @@ public class CitasDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println("La cita incluye");
+        /*System.out.println("La cita incluye");
         for(CitasServicios servicio: lista){
             System.out.println(servicio);
-        }
+        }*/
 
         return lista;
     }
@@ -212,9 +213,9 @@ public class CitasDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(Citas elemento: lista){
+        /*for(Citas elemento: lista){
             System.out.println(elemento);
-        }
+        }*/
 
         return lista;
     }

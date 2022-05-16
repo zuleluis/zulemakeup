@@ -20,6 +20,7 @@
                 <th>Promoción</th>
                 <th>Importe</th>
                 <th>Nota</th>
+                <th>Estado</th>
             </tr>
             </thead>
             <%
@@ -33,6 +34,7 @@
                 <td><%out.print(cita.getPromocion().getNombrePromocion());%></td>
                 <td><%out.print(cita.getCita().getImporte());%></td>
                 <td><%out.print(cita.getCita().getNota());%></td>
+                <td><%if (cita.getCita().isBorrar()) out.print("Cancelada"); else out.print("Activa");%></td>
             </tr><%
                 }
             }
