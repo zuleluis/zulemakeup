@@ -10,6 +10,11 @@ public class Marcas implements Serializable {
 
     }
 
+    public Marcas(int idMarca, String nombre){
+        this.idMarca = idMarca;
+        this.nombre = nombre;
+    }
+
     public Marcas(String nombre){
         this.nombre = nombre;
     }

@@ -1,6 +1,7 @@
 package datos.DAO;
 
 import datos.Conexion;
+import modelo.Clientes;
 import modelo.Productos;
 import modelo.auxiliares.JoinProductos;
 import modelo.catalogos.Tipos;
@@ -176,6 +177,63 @@ public class ProductosDAO {
         Conexion.close(ps);
 
         return auxProducto;
+    }
+
+    //Lista de marcas
+    public LinkedList<Marcas> getMarcas() throws SQLException{
+        LinkedList<Marcas> lista = new LinkedList<>();
+        this.ps = this.connection.prepareStatement("SELECT * FROM Marcas");
+        this.rs = ps.executeQuery();
+
+        while (rs.next()){
+            int idMarca = rs.getInt("idMarca");
+            String nombre = rs.getString("nombre");
+            marca = new Marcas(idMarca, nombre);
+            lista.add(marca);
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return lista;
+    }
+
+    //Lista de aplicación
+    public LinkedList<Aplicacion> getAplicacion() throws SQLException{
+        LinkedList<Aplicacion> lista = new LinkedList<>();
+        this.ps = this.connection.prepareStatement("SELECT * FROM Aplicacion");
+        this.rs = ps.executeQuery();
+
+        while (rs.next()){
+            int idAplicacion = rs.getInt("idAplicacion");
+            String nombre = rs.getString("nombre");
+            aplicacion = new Aplicacion(idAplicacion, nombre);
+            lista.add(aplicacion);
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return lista;
+    }
+
+    //Lista de tipos
+    public LinkedList<Tipos> getTipos() throws SQLException{
+        LinkedList<Tipos> lista = new LinkedList<>();
+        this.ps = this.connection.prepareStatement("SELECT * FROM Tipos");
+        this.rs = ps.executeQuery();
+
+        while (rs.next()){
+            int idTipo = rs.getInt("idTipo");
+            String nombre = rs.getString("nombre");
+            tipo = new Tipos(idTipo, nombre);
+            lista.add(tipo);
+        }
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return lista;
     }
 
 }

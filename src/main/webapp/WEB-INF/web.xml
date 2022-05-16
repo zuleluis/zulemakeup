@@ -55,6 +55,16 @@
     <servlet-class>controlador.productos.ListaProductos</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>MapeoProductos</servlet-name>
+    <servlet-class>controlador.productos.MapeoProductos</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RegistrarProducto</servlet-name>
+    <servlet-class>controlador.productos.RegistrarProducto</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
@@ -105,5 +115,16 @@
     <servlet-name>ListaProductos</servlet-name>
     <url-pattern>/ListaProductos</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MapeoProductos</servlet-name>
+    <url-pattern>/MapeoProductos</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarProducto</servlet-name>
+    <url-pattern>/RegistrarProducto</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>

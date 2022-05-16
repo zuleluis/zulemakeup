@@ -1,5 +1,4 @@
 <%@ page import="modelo.Clientes" %>
-<%@ page import="modelo.Citas" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="modelo.Promociones" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

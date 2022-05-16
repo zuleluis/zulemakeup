@@ -10,6 +10,11 @@ public class Aplicacion implements Serializable {
 
     }
 
+    public Aplicacion(int idAplicacion, String nombre){
+        this.idAplicacion = idAplicacion;
+        this.nombre = nombre;
+    }
+
     public Aplicacion(String nombre){
         this.nombre = nombre;
     }

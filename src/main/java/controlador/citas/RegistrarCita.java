@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegistrarCita", value = "/RegistrarCita")
+@WebServlet(name = "RegistrarCita", urlPatterns = {"/RegistrarCita"})
 public class RegistrarCita extends HttpServlet {
     private int fkCliente;
     private String fecha;
