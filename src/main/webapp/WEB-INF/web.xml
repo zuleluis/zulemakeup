@@ -40,6 +40,16 @@
     <servlet-class>controlador.citas.MapeoListas</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>BuscarCita</servlet-name>
+    <servlet-class>controlador.citas.BuscarCita</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ServiciosCliente</servlet-name>
+    <servlet-class>controlador.citas.ServiciosCliente</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
     <url-pattern>/ListaClientes</url-pattern>
@@ -73,6 +83,16 @@
   <servlet-mapping>
     <servlet-name>MapeoListas</servlet-name>
     <url-pattern>/MapeoListas</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>BuscarCita</servlet-name>
+    <url-pattern>/BuscarCita</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ServiciosCliente</servlet-name>
+    <url-pattern>/ServiciosCliente</url-pattern>
   </servlet-mapping>
 
 </web-app>

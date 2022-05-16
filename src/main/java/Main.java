@@ -6,6 +6,7 @@ import datos.DAO.ClientesDAO;
 import datos.DAO.ProductosDAO;
 import datos.DAO.PromocionesDAO;
 import datos.DAO.ServiciosDAO;
+import modelo.auxiliares.CitasServicios;
 import modelo.auxiliares.JoinCitas;
 
 import java.sql.*;
@@ -13,11 +14,11 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        Connection connection = Conexion.getConnection();
+        //Connection connection = Conexion.getConnection();
         //ClientesDAO clientesDAO = new ClientesDAO(connection);
         //CitasDAO citasDAO = new CitasDAO(connection);
         //ProductosDAO productosDAO = new ProductosDAO(connection);
-        PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
+        //PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
         //ServiciosDAO serviciosDAO = new ServiciosDAO(connection);
 
         //Mostrar lista de clientes
@@ -43,7 +44,7 @@ public class Main {
         //JoinCitas cita = citasDAO.getCita(2);
 
         //Muestra los servicios de una cita
-        //citasDAO.getCitasServicios(1);
+        //LinkedList<CitasServicios> lista = citasDAO.getCitasServicios(1);
 
         //Muestra las citas por cliente
         //citasDAO.getCitasCliente(2);
