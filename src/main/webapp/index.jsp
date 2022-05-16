@@ -17,6 +17,8 @@
             <li> <a href="/zulemakeup/Citas/ListaCitas.jsp">Mostrar lista de citas</a> </li>
             <li> <a href="/zulemakeup/Citas/RegistrarCita.jsp">Registrar cita</a> </li>
             <li> <a href="/zulemakeup/Citas/BuscarCita.jsp">Buscar cita</a> </li>
+
+            <li> <a href="/zulemakeup/Productos/ListaProductos.jsp">Mostrar lista de productos</a> </li>
             <!-- <li> <a href="/citas.jsp">Citas</a></li>
             <li> <a href="/zulemakeup/clientes/ListaClientes.jsp">Clientes</a></li>
             <li> <a href="/servicios.jsp">Servicios</a></li>

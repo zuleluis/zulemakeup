@@ -50,6 +50,11 @@
     <servlet-class>controlador.citas.CancelarCita</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ListaProductos</servlet-name>
+    <servlet-class>controlador.productos.ListaProductos</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
@@ -94,6 +99,11 @@
   <servlet-mapping>
     <servlet-name>CancelarCita</servlet-name>
     <url-pattern>/CancelarCita</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ListaProductos</servlet-name>
+    <url-pattern>/ListaProductos</url-pattern>
   </servlet-mapping>
 
 </web-app>
