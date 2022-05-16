@@ -19,6 +19,13 @@ public class Promociones implements Serializable {
         this.estado = estado;
     }
 
+    public Promociones(int idPromocion, String nombrePromocion, float precio, boolean estado){
+        this.idPromocion = idPromocion;
+        this.nombrePromocion = nombrePromocion;
+        this.precio = precio;
+        this.estado = estado;
+    }
+
     //Mostrar
     public Promociones(String nombrePromocion){
         this.nombrePromocion = nombrePromocion;

@@ -36,8 +36,8 @@
   </servlet>
 
   <servlet>
-    <servlet-name>MapaClientes</servlet-name>
-    <servlet-class>controlador.citas.MapaClientes</servlet-class>
+    <servlet-name>MapeoListas</servlet-name>
+    <servlet-class>controlador.citas.MapeoListas</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -71,7 +71,8 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>MapaClientes</servlet-name>
-    <url-pattern>/MapaClientes</url-pattern>
+    <servlet-name>MapeoListas</servlet-name>
+    <url-pattern>/MapeoListas</url-pattern>
   </servlet-mapping>
+
 </web-app>

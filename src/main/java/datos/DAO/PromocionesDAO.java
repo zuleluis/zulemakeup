@@ -26,10 +26,11 @@ public class PromocionesDAO {
         this.rs = ps.executeQuery();
 
         while (rs.next()){
+            int idPromocion = rs.getInt("idPromocion");
             String nombrePromocion = rs.getString("nombrePromocion");
             float precio = rs.getFloat("precio");
             boolean estado = rs.getBoolean("estado");
-            promocion = new Promociones(nombrePromocion, precio, estado);
+            promocion = new Promociones(idPromocion, nombrePromocion, precio, estado);
             lista.add(promocion);
         }
 
@@ -38,7 +39,7 @@ public class PromocionesDAO {
 
         for(Promociones promocion: lista){
             String disponibilidad = (promocion.isEstado() ? "No disponible" :"Disponible");
-            System.out.println("Promocion: " + promocion.getNombrePromocion() + ' ' + promocion.getPrecio() + ' ' + disponibilidad);
+            System.out.println("Promocion: " + promocion.getIdPromocion() + " " + promocion.getNombrePromocion() + ' ' + promocion.getPrecio() + ' ' + disponibilidad);
         }
 
         return lista;

@@ -22,6 +22,7 @@ public class ClientesDAO {
         this.rs = ps.executeQuery();
 
         while (rs.next()){
+            int idCliente = rs.getInt("idCliente");
             String nombre = rs.getString("nombre");
             String apPaterno = rs.getString("apPaterno");
             String apMaterno = rs.getString("apMaterno");
@@ -31,7 +32,7 @@ public class ClientesDAO {
             String colonia = rs.getString("colonia");
             String ciudad = rs.getString("ciudad");
             String numTel = rs.getString("numTel");
-            cliente = new Clientes(nombre, apPaterno, apMaterno, fechaNac, calle, numero, colonia, ciudad, numTel);
+            cliente = new Clientes(idCliente, nombre, apPaterno, apMaterno, fechaNac, calle, numero, colonia, ciudad, numTel);
             lista.add(cliente);
         }
 
@@ -39,7 +40,7 @@ public class ClientesDAO {
         Conexion.close(ps);
 
         for(Clientes cliente : lista){
-            System.out.println("Cliente: " + cliente.getNombre() + ' ' + cliente.getApPaterno() + ' ' + cliente.getApMaterno());
+            System.out.println("Cliente: " + cliente.getIdCliente() + " " + cliente.getNombre() + ' ' + cliente.getApPaterno() + ' ' + cliente.getApMaterno());
         }
 
         return lista;

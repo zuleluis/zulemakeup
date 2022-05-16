@@ -21,7 +21,7 @@ public class RegistrarCita extends HttpServlet {
     private int fkCliente;
     private String fecha;
     private String hora;
-    private boolean tipoLugar;
+    private String tipoLugar;
     private String lugar;
     private int fkPromocion;
     private float importe;
@@ -35,7 +35,7 @@ public class RegistrarCita extends HttpServlet {
         fkCliente = Integer.parseInt(request.getParameter("fkCliente"));
         fecha = request.getParameter("fecha");
         hora = request.getParameter("hora");
-        tipoLugar = Boolean.parseBoolean(request.getParameter("tipoLugar"));
+        tipoLugar = request.getParameter("tipoLugar");
         lugar = request.getParameter("lugar");
         fkPromocion = Integer.parseInt(request.getParameter("fkPromocion"));
         importe = Float.parseFloat(request.getParameter("importe"));
@@ -44,15 +44,19 @@ public class RegistrarCita extends HttpServlet {
         try{
             Connection connection = conexion.getConnection();
             CitasDAO citasDAO = new CitasDAO(connection);
-            ClientesDAO clientesDAO = new ClientesDAO(connection);
 
-            request.getSession().setAttribute("datos", clientesDAO.getClientes());
-            Citas cita = new Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota, false);
+            hora = hora + ":00";
+
+            boolean checkbox;
+
+            if (tipoLugar == null) checkbox = false;
+            else checkbox = true;
+
+            Citas cita = new Citas(fkCliente, fecha, hora, checkbox, lugar, fkPromocion, importe, nota, false);
             citasDAO.insertaCita(cita);
             connection.close();
         }
         catch (SQLException e){
-            request.getSession().setAttribute("datos", new LinkedList<Clientes>());
             e.printStackTrace();
         }
 

@@ -2,6 +2,8 @@ package controlador.citas;
 
 import datos.DAO.ClientesDAO;
 import modelo.Clientes;
+import datos.DAO.PromocionesDAO;
+import modelo.Promociones;
 
 import javax.annotation.Resource;
 import javax.servlet.*;
@@ -13,8 +15,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-@WebServlet(name = "MapaClientes",urlPatterns = {"/MapaClientes"})
-public class MapaClientes extends HttpServlet {
+@WebServlet(name = "MapeoListas",urlPatterns = {"/MapeoListas"})
+public class MapeoListas extends HttpServlet {
     @Resource(name = "jdbc/database")
     private DataSource conexion;
 
@@ -23,10 +25,14 @@ public class MapaClientes extends HttpServlet {
         try{
             Connection connection = conexion.getConnection();
             ClientesDAO clientesDAO = new ClientesDAO(connection);
-            request.getSession().setAttribute("datos", clientesDAO.getClientes());
+            PromocionesDAO promocionessDAO = new PromocionesDAO(connection);
+
+            request.getSession().setAttribute("clientes", clientesDAO.getClientes());
+            request.getSession().setAttribute("promociones", promocionessDAO.getPromociones());
             connection.close();
         } catch (SQLException e){
-            request.getSession().setAttribute("datos", new LinkedList<Clientes>());
+            request.getSession().setAttribute("clientes", new LinkedList<Clientes>());
+            request.getSession().setAttribute("promociones", new LinkedList<Promociones>());
             e.printStackTrace();
         }
         response.sendRedirect("/zulemakeup/Citas/RegistrarCita.jsp");
