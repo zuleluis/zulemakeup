@@ -25,6 +25,11 @@
     <servlet-class>controlador.clientes.EliminarCliente</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ListaCitas</servlet-name>
+    <servlet-class>controlador.citas.ListaCitas</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
     <url-pattern>/ListaClientes</url-pattern>
@@ -43,5 +48,10 @@
   <servlet-mapping>
     <servlet-name>EliminarCliente</servlet-name>
     <url-pattern>/EliminarCliente</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ListaCitas</servlet-name>
+    <url-pattern>/ListaCitas</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -13,6 +13,8 @@
             <li> <a href="/zulemakeup/Clientes/ListaClientes.jsp">Mostrar lista de clientes</a> </li>
             <li> <a href="/zulemakeup/Clientes/RegistrarCliente.jsp">Registrar cliente</a> </li>
             <li> <a href="/zulemakeup/Clientes/BuscarCliente.jsp">Buscar cliente</a> </li>
+
+            <li> <a href="/zulemakeup/Citas/ListaCitas.jsp">Mostrar lista de citas</a> </li>
             <!-- <li> <a href="/citas.jsp">Citas</a></li>
             <li> <a href="/zulemakeup/clientes/ListaClientes.jsp">Clientes</a></li>
             <li> <a href="/servicios.jsp">Servicios</a></li>
@@ -20,11 +22,6 @@
             <li> <a href="/productos.jsp">Productos</a></li> !-->
         </ul>
     </nav>
-    <p>
-        <form action = "Clientes/ListaClientes.jsp">
-            <input type = "submit" value = "Lista de clientes"/>
-        </form>
-    </p>
 </header>
 
 </body>
