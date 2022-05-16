@@ -30,6 +30,16 @@
     <servlet-class>controlador.citas.ListaCitas</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>RegistrarCita</servlet-name>
+    <servlet-class>controlador.citas.RegistrarCita</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>MapaClientes</servlet-name>
+    <servlet-class>controlador.citas.MapaClientes</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
     <url-pattern>/ListaClientes</url-pattern>
@@ -53,5 +63,15 @@
   <servlet-mapping>
     <servlet-name>ListaCitas</servlet-name>
     <url-pattern>/ListaCitas</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarCita</servlet-name>
+    <url-pattern>/RegistrarCita</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MapaClientes</servlet-name>
+    <url-pattern>/MapaClientes</url-pattern>
   </servlet-mapping>
 </web-app>
