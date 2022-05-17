@@ -90,6 +90,11 @@
     <servlet-class>controlador.promociones.BuscarPromocion</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EliminarPromocion</servlet-name>
+    <servlet-class>controlador.promociones.EliminarPromocion</servlet-class>
+  </servlet>
+
 
 
 
@@ -177,6 +182,11 @@
   <servlet-mapping>
     <servlet-name>BuscarPromocion</servlet-name>
     <url-pattern>/BuscarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EliminarPromocion</servlet-name>
+    <url-pattern>/EliminarPromocion</url-pattern>
   </servlet-mapping>
 
 </web-app>

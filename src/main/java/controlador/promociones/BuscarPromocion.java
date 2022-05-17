@@ -17,7 +17,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-@WebServlet(name = "BuscarPromocion", value = "/BuscarPromocion")
+@WebServlet(name = "BuscarPromocion", urlPatterns = {"/BuscarPromocion"})
 public class BuscarPromocion extends HttpServlet {
     private int idPromocion;
 
