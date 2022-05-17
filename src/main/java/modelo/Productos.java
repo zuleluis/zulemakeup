@@ -27,8 +27,17 @@ public class Productos implements Serializable {
         this.agotado = agotado;
     }
 
+
     //Mostrar
     public Productos(String nombreProducto, String modelo, int cantidad, boolean agotado){
+        this.nombreProducto = nombreProducto;
+        this.modelo = modelo;
+        this.cantidad = cantidad;
+        this.agotado = agotado;
+    }
+
+    public Productos(int idProducto, String nombreProducto, String modelo, int cantidad, boolean agotado){
+        this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.modelo = modelo;
         this.cantidad = cantidad;

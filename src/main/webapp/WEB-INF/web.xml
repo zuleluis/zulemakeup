@@ -65,6 +65,26 @@
     <servlet-class>controlador.productos.RegistrarProducto</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>BuscarProducto</servlet-name>
+    <servlet-class>controlador.productos.BuscarProducto</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>EliminarProducto</servlet-name>
+    <servlet-class>controlador.productos.EliminarProducto</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ListaPromociones</servlet-name>
+    <servlet-class>controlador.promociones.ListaPromociones</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RegistrarPromocion</servlet-name>
+    <servlet-class>controlador.promociones.RegistrarPromocion</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
@@ -126,5 +146,24 @@
     <url-pattern>/RegistrarProducto</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>BuscarProducto</servlet-name>
+    <url-pattern>/BuscarProducto</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EliminarProducto</servlet-name>
+    <url-pattern>/EliminarProducto</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ListaPromociones</servlet-name>
+    <url-pattern>/ListaPromociones</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarPromocion</servlet-name>
+    <url-pattern>/RegistrarPromocion</url-pattern>
+  </servlet-mapping>
 
 </web-app>

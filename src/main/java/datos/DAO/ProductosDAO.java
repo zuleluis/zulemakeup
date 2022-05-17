@@ -74,7 +74,7 @@ public class ProductosDAO {
 
     //Obtiene los productos por idProducto
     public JoinProductos getProducto(int idProducto) throws SQLException{
-        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre as Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
+        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre as Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.idProducto, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
                 "JOIN Marcas ON Productos.fkMarca = Marcas.idMarca\n" +
                 "JOIN Aplicacion ON Productos.fkAplicacion = Aplicacion.idAplicacion\n" +
                 "JOIN Tipos ON Productos.fkTipo = Tipos.idTipo\n" +
@@ -92,7 +92,7 @@ public class ProductosDAO {
         tipo = new Tipos(rs.getString("Tipo"));
         aplicacion = new Aplicacion(rs.getString("Aplicacion"));
 
-        producto = new Productos(rs.getString("nombreProducto"), rs.getString("modelo"), rs.getInt("cantidad"), rs.getBoolean("agotado"));
+        producto = new Productos(rs.getInt("idProducto"), rs.getString("nombreProducto"), rs.getString("modelo"), rs.getInt("cantidad"), rs.getBoolean("agotado"));
 
         JoinProductos auxProducto = new JoinProductos(producto, marca, tipo, aplicacion);
 
