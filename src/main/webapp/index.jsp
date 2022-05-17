@@ -32,6 +32,7 @@
             <p/>
             <li> <a href="/zulemakeup/Servicios/ListaServicios.jsp">Mostrar lista de servicios</a> </li>
             <li> <a href="/zulemakeup/Servicios/RegistrarServicio.jsp">Registrar servicio</a> </li>
+            <li> <a href="/zulemakeup/Servicios/BuscarServicio.jsp">Buscar servicio</a> </li>
             <!-- <li> <a href="/citas.jsp">Citas</a></li>
             <li> <a href="/zulemakeup/clientes/ListaClientes.jsp">Clientes</a></li>
             <li> <a href="/servicios.jsp">Servicios</a></li>

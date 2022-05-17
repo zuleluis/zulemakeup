@@ -18,6 +18,13 @@ public class Servicios implements Serializable {
         this.descripcion = descripcion;
     }
 
+    public Servicios(int idServicio, String nombreServicio, float precio, String descripcion){
+        this.idServicio = idServicio;
+        this.nombreServicio = nombreServicio;
+        this.precio = precio;
+        this.descripcion = descripcion;
+    }
+
     public Servicios(String nombreServicio){
         this.nombreServicio = nombreServicio;
     }

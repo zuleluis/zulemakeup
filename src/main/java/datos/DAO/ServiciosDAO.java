@@ -52,7 +52,7 @@ public class ServiciosDAO {
             return null;
         }
 
-        Servicios auxServicio = new Servicios(rs.getString("nombreServicio"), rs.getFloat("precio"), rs.getString("descripcion"));
+        Servicios auxServicio = new Servicios(rs.getInt("idServicio"), rs.getString("nombreServicio"), rs.getFloat("precio"), rs.getString("descripcion"));
 
         Conexion.close(rs);
         Conexion.close(ps);
