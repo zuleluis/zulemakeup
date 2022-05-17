@@ -1,7 +1,6 @@
 package datos.DAO;
 
 import datos.Conexion;
-import modelo.Clientes;
 import modelo.Productos;
 import modelo.auxiliares.JoinProductos;
 import modelo.catalogos.Tipos;

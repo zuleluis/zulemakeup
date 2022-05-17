@@ -1,8 +1,6 @@
 package controlador.productos;
 
-import datos.DAO.ClientesDAO;
 import datos.DAO.ProductosDAO;
-import modelo.Clientes;
 import modelo.Productos;
 
 import javax.annotation.Resource;

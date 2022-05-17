@@ -1,8 +1,6 @@
 package controlador.promociones;
 
-import datos.DAO.ProductosDAO;
 import datos.DAO.PromocionesDAO;
-import modelo.Productos;
 import modelo.Promociones;
 
 import javax.annotation.Resource;
@@ -14,7 +12,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(name = "RegistrarPromocion", value = "/RegistrarPromocion")
+@WebServlet(name = "RegistrarPromocion", urlPatterns = {"/RegistrarPromocion"})
 public class RegistrarPromocion extends HttpServlet {
     String nombrePromocion;
     float precio;

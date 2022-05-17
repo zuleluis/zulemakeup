@@ -1,10 +1,7 @@
 package controlador.promociones;
 
-import datos.DAO.CitasDAO;
 import datos.DAO.PromocionesDAO;
 import modelo.Promociones;
-import modelo.auxiliares.CitasServicios;
-import modelo.auxiliares.JoinCitas;
 import modelo.auxiliares.PromoServicios;
 
 import javax.annotation.Resource;

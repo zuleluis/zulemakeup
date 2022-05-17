@@ -1,7 +1,6 @@
 package controlador.clientes;
 
 import datos.DAO.ClientesDAO;
-import modelo.Clientes;
 
 import javax.annotation.Resource;
 import javax.servlet.*;

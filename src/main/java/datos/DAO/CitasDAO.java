@@ -10,7 +10,6 @@ import modelo.Promociones;
 import modelo.Servicios;
 import modelo.auxiliares.CitasServicios;
 import modelo.auxiliares.JoinCitas;
-import modelo.auxiliares.PromoServicios;
 
 public class CitasDAO {
     private Connection connection;

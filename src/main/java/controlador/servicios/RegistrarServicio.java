@@ -1,8 +1,6 @@
 package controlador.servicios;
 
-import datos.DAO.PromocionesDAO;
 import datos.DAO.ServiciosDAO;
-import modelo.Promociones;
 import modelo.Servicios;
 
 import javax.annotation.Resource;

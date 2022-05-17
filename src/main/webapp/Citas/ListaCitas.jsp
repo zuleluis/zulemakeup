@@ -1,4 +1,3 @@
-<%@ page import="modelo.Clientes" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="modelo.auxiliares.JoinCitas" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

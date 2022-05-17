@@ -1,13 +1,10 @@
 package controlador.citas;
 
 import datos.DAO.CitasDAO;
-import datos.DAO.ClientesDAO;
-import modelo.Clientes;
 import modelo.auxiliares.CitasServicios;
 import modelo.auxiliares.JoinCitas;
 
 import javax.annotation.Resource;
-import javax.persistence.criteria.Join;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,7 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-@WebServlet(name = "BuscarCita", value = "/BuscarCita")
+@WebServlet(name = "BuscarCita", urlPatterns = {"/BuscarCita"})
 public class BuscarCita extends HttpServlet {
     private int idCita;
 
