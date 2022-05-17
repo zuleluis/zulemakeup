@@ -57,7 +57,7 @@ public class PromocionesDAO {
             return null;
         }
 
-        Promociones auxPromocion = new Promociones(rs.getString("nombrePromocion"), rs.getFloat("precio"), rs.getBoolean("estado"));
+        Promociones auxPromocion = new Promociones(rs.getInt("idPromocion"), rs.getString("nombrePromocion"), rs.getFloat("precio"), rs.getBoolean("estado"));
 
         Conexion.close(rs);
         Conexion.close(ps);

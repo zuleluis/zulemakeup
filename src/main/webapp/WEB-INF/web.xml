@@ -85,6 +85,14 @@
     <servlet-class>controlador.promociones.RegistrarPromocion</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>BuscarPromocion</servlet-name>
+    <servlet-class>controlador.promociones.BuscarPromocion</servlet-class>
+  </servlet>
+
+
+
+
 
   <servlet-mapping>
     <servlet-name>ListaClientes</servlet-name>
@@ -164,6 +172,11 @@
   <servlet-mapping>
     <servlet-name>RegistrarPromocion</servlet-name>
     <url-pattern>/RegistrarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>BuscarPromocion</servlet-name>
+    <url-pattern>/BuscarPromocion</url-pattern>
   </servlet-mapping>
 
 </web-app>

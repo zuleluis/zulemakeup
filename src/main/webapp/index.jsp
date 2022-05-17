@@ -27,6 +27,7 @@
             <p/>
             <li> <a href="/zulemakeup/Promociones/ListaPromociones.jsp">Mostrar lista de promociones</a> </li>
             <li> <a href="/zulemakeup/Promociones/RegistrarPromocion.jsp">Registrar promocion</a> </li>
+            <li> <a href="/zulemakeup/Promociones/BuscarPromocion.jsp">Buscar promocion</a> </li>
             <!-- <li> <a href="/citas.jsp">Citas</a></li>
             <li> <a href="/zulemakeup/clientes/ListaClientes.jsp">Clientes</a></li>
             <li> <a href="/servicios.jsp">Servicios</a></li>

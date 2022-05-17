@@ -65,7 +65,6 @@
             session.removeAttribute("encontrado");
             session.removeAttribute("servicios");
         %>
-
     </div>
 </main>
 
