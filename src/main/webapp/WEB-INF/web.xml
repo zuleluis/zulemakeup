@@ -110,6 +110,11 @@
     <servlet-class>controlador.servicios.BuscarServicio</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EliminarServicio</servlet-name>
+    <servlet-class>controlador.servicios.EliminarServicio</servlet-class>
+  </servlet>
+
 
 
 
@@ -217,6 +222,11 @@
   <servlet-mapping>
     <servlet-name>BuscarServicio</servlet-name>
     <url-pattern>/BuscarServicio</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EliminarServicio</servlet-name>
+    <url-pattern>/EliminarServicio</url-pattern>
   </servlet-mapping>
 
 </web-app>

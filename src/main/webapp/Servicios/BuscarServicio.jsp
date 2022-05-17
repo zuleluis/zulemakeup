@@ -38,6 +38,8 @@
                     <%
                 }
                 else %><p>Servicio no encontrado</p><%
+                session.removeAttribute("datos");
+                session.removeAttribute("encontrado");
             }
         %>
     </div>

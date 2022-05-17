@@ -1,6 +1,7 @@
-package controlador.promociones;
+package controlador.servicios;
 
 import datos.DAO.PromocionesDAO;
+import datos.DAO.ServiciosDAO;
 
 import javax.annotation.Resource;
 import javax.servlet.*;
@@ -11,25 +12,25 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(name = "EliminarPromocion", urlPatterns = {"/EliminarPromocion"})
-public class EliminarPromocion extends HttpServlet {
-    private int idPromocion;
+@WebServlet(name = "EliminarServicio", urlPatterns = {"/EliminarServicio"})
+public class EliminarServicio extends HttpServlet {
+    private int idServicio;
 
     @Resource(name = "jdbc/database")
     private DataSource conexion;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        idPromocion = (int) request.getSession().getAttribute("idPromocion");
+        idServicio = (int) request.getSession().getAttribute("idServicio");
         try{
             Connection connection = conexion.getConnection();
-            PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
-            promocionesDAO.eliminaPromocion(idPromocion);
+            ServiciosDAO serviciosDAO = new ServiciosDAO(connection);
+            serviciosDAO.eliminaServicio(idServicio);
             connection.close();
         }
         catch (SQLException e){
             e.printStackTrace();
         }
-        response.sendRedirect("/zulemakeup/Promociones/BuscarPromocion.jsp");
+        response.sendRedirect("/zulemakeup/Servicios/BuscarServicio.jsp");
     }
 }
