@@ -100,6 +100,11 @@
     <servlet-class>controlador.servicios.ListaServicios</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>RegistrarServicio</servlet-name>
+    <servlet-class>controlador.servicios.RegistrarServicio</servlet-class>
+  </servlet>
+
 
 
 
@@ -197,6 +202,11 @@
   <servlet-mapping>
     <servlet-name>ListaServicios</servlet-name>
     <url-pattern>/ListaServicios</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarServicio</servlet-name>
+    <url-pattern>/RegistrarServicio</url-pattern>
   </servlet-mapping>
 
 </web-app>
