@@ -95,6 +95,11 @@
     <servlet-class>controlador.promociones.EliminarPromocion</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ListaServicios</servlet-name>
+    <servlet-class>controlador.servicios.ListaServicios</servlet-class>
+  </servlet>
+
 
 
 
@@ -187,6 +192,11 @@
   <servlet-mapping>
     <servlet-name>EliminarPromocion</servlet-name>
     <url-pattern>/EliminarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ListaServicios</servlet-name>
+    <url-pattern>/ListaServicios</url-pattern>
   </servlet-mapping>
 
 </web-app>

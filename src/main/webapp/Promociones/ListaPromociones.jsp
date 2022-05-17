@@ -22,17 +22,15 @@
                 if (lista != null){
                     for (Promociones promocion : lista){
             %><tr>
-            <td><%out.print(promocion.getNombrePromocion());%></td>
-            <td><%out.print("$" + promocion.getPrecio());%></td>
-            <td><%if (promocion.isEstado()) out.print("Activo"); else out.print("Inactivo");%></td>
-        </tr><%
+                <td><%out.print(promocion.getNombrePromocion());%></td>
+                <td><%out.print("$" + promocion.getPrecio());%></td>
+                <td><%if (promocion.isEstado()) out.print("Activo"); else out.print("Inactivo");%></td>
+                </tr><%
+                    }
                 }
-            }
-            else {
-                response.sendRedirect("/zulemakeup/ListaPromociones");
-            }
+                else response.sendRedirect("/zulemakeup/ListaPromociones");
             session.removeAttribute("datos");
-        %>
+            %>
         </table>
     </div>
 </main>
