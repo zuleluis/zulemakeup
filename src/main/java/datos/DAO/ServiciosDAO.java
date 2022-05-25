@@ -108,4 +108,42 @@ public class ServiciosDAO {
 
         return auxServicio;
     }
+
+    //Modificar el precio de un servicio
+    public Servicios modificaPrecio (int idServicio, float precio) throws SQLException{
+        Servicios auxServicio = getServicio(idServicio);
+
+        if (auxServicio == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Servicios SET precio = ? WHERE idServicio = ?");
+
+        this.ps.setFloat(1, precio);
+        this.ps.setInt(2, idServicio);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxServicio;
+    }
+
+    //Modificar la descripción de un servicio
+    public Servicios modificaDescripcion (int idServicio, String descripcion) throws SQLException{
+        Servicios auxServicio = getServicio(idServicio);
+
+        if (auxServicio == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Servicios SET descripcion = ? WHERE idServicio = ?");
+
+        this.ps.setString(1, descripcion);
+        this.ps.setInt(2, idServicio);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxServicio;
+    }
 }
