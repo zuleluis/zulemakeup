@@ -167,9 +167,118 @@ public class ClientesDAO {
         return auxCliente;
     }
 
+    //Modificar la fecha de nacimiento de un cliente
+    public Clientes modificaFecha (int idCliente, String fecha) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
 
+        if (auxCliente == null){
+            return null;
+        }
 
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET fechaNac = ? WHERE idCliente = ?");
 
+        this.ps.setDate(1, Date.valueOf(fecha));
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
 
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar la calle de un cliente
+    public Clientes modificaCalle (int idCliente, String calle) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET calle = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, calle);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar el numero de un cliente
+    public Clientes modificaNumero(int idCliente, int numero) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET numero = ? WHERE idCliente = ?");
+
+        this.ps.setInt(1, numero);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar la colonia de un cliente
+    public Clientes modificaColonia (int idCliente, String colonia) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET colonia = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, colonia);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar la ciudad de un cliente
+    public Clientes modificaCiudad(int idCliente, String ciudad) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET ciudad = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, ciudad);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar el número telefónico de un cliente
+    public Clientes modificaNumTel (int idCliente, String numTel) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET numTel = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, numTel);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
 
 }
