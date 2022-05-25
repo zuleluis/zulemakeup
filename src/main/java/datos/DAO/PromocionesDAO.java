@@ -87,6 +87,23 @@ public class PromocionesDAO {
         //Conexion.close(ps);
     }
 
+    //Elimina un servicio a una promoción
+    public void eliminaServicio(int idPromocion, int idServicio) throws SQLException{
+        this.ps = this.connection.prepareStatement("DELETE FROM PromoServicios WHERE fkPromocion = ? AND fkServicio = ?;");
+        ps.setInt(1, idPromocion);
+        ps.setInt(2, idServicio);
+        ps.executeUpdate();
+        //Conexion.close(ps);
+    }
+
+    //Elimina los servicios de una promoción
+    public void eliminaServicios(int idPromocion) throws SQLException{
+        this.ps = this.connection.prepareStatement("DELETE FROM PromoServicios WHERE fkPromocion = ?;");
+        ps.setInt(1, idPromocion);
+        ps.executeUpdate();
+        //Conexion.close(ps);
+    }
+
     //Muestra los servicios de una promoción
     public LinkedList<PromoServicios> getPromoServicios(int idPromocion) throws SQLException{
         LinkedList<PromoServicios> lista = new LinkedList<>();
@@ -145,6 +162,44 @@ public class PromocionesDAO {
         this.ps = this.connection.prepareStatement ("UPDATE Promociones SET nombrePromocion = ? WHERE idPromocion = ?");
 
         this.ps.setString(1, nombre);
+        this.ps.setInt(2, idPromocion);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxPromocion;
+    }
+
+    //Modificar el precio de una promoción
+    public Promociones modificaPrecio (int idPromocion, float precio) throws SQLException{
+        Promociones auxPromocion = getPromocion(idPromocion);
+
+        if (auxPromocion == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Promociones SET precio = ? WHERE idPromocion = ?");
+
+        this.ps.setFloat(1, precio);
+        this.ps.setInt(2, idPromocion);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxPromocion;
+    }
+
+    //Modificar la disponibilidad de una promoción
+    public Promociones modificaDisponibilidad (int idPromocion, boolean estado) throws SQLException{
+        Promociones auxPromocion = getPromocion(idPromocion);
+
+        if (auxPromocion == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Promociones SET estado = ? WHERE idPromocion = ?");
+
+        this.ps.setBoolean(1, estado);
         this.ps.setInt(2, idPromocion);
         this.ps.executeUpdate();
 
