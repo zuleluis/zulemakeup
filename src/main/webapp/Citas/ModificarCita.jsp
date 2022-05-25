@@ -36,14 +36,14 @@
                     }%>
                 </table>
                 <p/>
-                <td>Promociones: </td>
-                <table>
+                <td>Promoción </td>
+                    <select name="fkPromocion" >
                     <%if(listapromos != null){
                         for (Promociones promocion : listapromos){%>
-                            <tr><td><%out.print(promocion.getNombrePromocion());%></td></tr>
+                            <option value ="<%=promocion.getIdPromocion()%>"><%=promocion.getNombrePromocion()%></option>
                         <%}
                     }%>
-                </table>
+                    </select>
                 </tr>
                 <%
             }

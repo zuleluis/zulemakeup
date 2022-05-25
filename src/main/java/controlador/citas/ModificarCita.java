@@ -40,8 +40,8 @@ public class ModificarCita extends HttpServlet {
         this.hora = request.getParameter("hora");
         this.tipoLugar = request.getParameter("tipoLugar");
         this.lugar = request.getParameter("lugar");
-        this.fkPromocion = Integer.parseInt(request.getParameter("fkPromocion"));
-        this.importe = Float.parseFloat(request.getParameter("importe"));
+        //this.fkPromocion = Integer.parseInt(request.getParameter("fkPromocion"));
+        //this.importe = Float.parseFloat(request.getParameter("importe"));
         this.nota = request.getParameter("nota");
 
         try{
@@ -58,15 +58,14 @@ public class ModificarCita extends HttpServlet {
             if (tipoLugar == null) tLugar = false;
             else tLugar = true;
 
-            if (actualizacion()){
+            /*if (actualizacion()){
                 request.getSession().setAttribute("modificacion", true);
                 response.sendRedirect("/zulemakeup/Citas/BuscarCita.jsp");
             }
             else{
                 request.getSession().setAttribute("modificacion", false);
                 response.sendRedirect("/zulemakeup/Citas/ModificarCita.jsp");
-            }
-
+            }*/
 
             connection.close();
         }
