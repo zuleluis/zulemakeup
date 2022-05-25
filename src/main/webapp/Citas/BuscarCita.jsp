@@ -49,11 +49,11 @@
         </tr>
             <p/>
             <p/>
-            <form action="../index.jsp">
+            <form method="post" action="/zulemakeup/ModificarCita">
                 <p class="center-content"><input type="submit" value="Modificar"/></p>
             </form>
             <form method="post" action="/zulemakeup/CancelarCita">
-                <p class="center-content"><input type="submit" value="Eliminar"/></p>
+                <p class="center-content"><input type="submit" value="Cancelar cita"/></p>
             </form>
             <%
             }

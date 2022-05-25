@@ -51,6 +51,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ModificarCita</servlet-name>
+    <servlet-class>controlador.citas.ModificarCita</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>ListaProductos</servlet-name>
     <servlet-class>controlador.productos.ListaProductos</servlet-class>
   </servlet>
@@ -162,6 +167,11 @@
   <servlet-mapping>
     <servlet-name>CancelarCita</servlet-name>
     <url-pattern>/CancelarCita</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModificarCita</servlet-name>
+    <url-pattern>/ModificarCita</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
