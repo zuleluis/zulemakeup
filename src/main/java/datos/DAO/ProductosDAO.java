@@ -178,6 +178,120 @@ public class ProductosDAO {
         return auxProducto;
     }
 
+    //Modificar la marca de un producto
+    public Productos modificaMarca(int idProducto, int fkMarca) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET fkMarca = ? WHERE idProducto = ?");
+
+        this.ps.setInt(1, fkMarca);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar el tipo de aplicación de un producto
+    public Productos modificaAplicación(int idProducto, int fkAplicacion) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET fkAplicacion = ? WHERE idProducto = ?");
+
+        this.ps.setInt(1, fkAplicacion);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar el tipo de un producto
+    public Productos modificaTipo(int idProducto, int fkTipo) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET fkTipo = ? WHERE idProducto = ?");
+
+        this.ps.setInt(1, fkTipo);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar el modelo de un producto
+    public Productos modificaModelo(int idProducto, String modelo) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET modelo = ? WHERE idProducto = ?");
+
+        this.ps.setString(1, modelo);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar la cantidad de existencias de un producto
+    public Productos modificaCantidad(int idProducto, int cantidad) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET cantidad = ? WHERE idProducto = ?");
+
+        this.ps.setInt(1, cantidad);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
+    //Modificar el estado de disponibilidad producto
+    public Productos modificaDisponibilidad(int idProducto, boolean agotado) throws SQLException{
+        Productos auxProducto = getProductoPrimitivo(idProducto);
+
+        if (auxProducto == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Productos SET agotado = ? WHERE idProducto = ?");
+
+        this.ps.setBoolean(1, agotado);
+        this.ps.setInt(2, idProducto);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxProducto;
+    }
+
     //Lista de marcas
     public LinkedList<Marcas> getMarcas() throws SQLException{
         LinkedList<Marcas> lista = new LinkedList<>();
