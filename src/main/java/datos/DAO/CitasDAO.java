@@ -149,7 +149,7 @@ public class CitasDAO {
     }
 
     //Modificar la fecha de una cita
-    public Citas modificaFecha (int idCita, Date fecha) throws SQLException{
+    public Citas modificaFecha (int idCita, String fecha) throws SQLException{
         Citas auxCita = getCitaPrimitiva(idCita);
 
         if (auxCita == null){
@@ -158,7 +158,121 @@ public class CitasDAO {
 
         this.ps = this.connection.prepareStatement ("UPDATE Citas SET fecha = ? WHERE idCita = ?");
 
-        this.ps.setDate(1, fecha);
+        this.ps.setDate(1, Date.valueOf(fecha));
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar la hora de una cita
+    public Citas modificaHora (int idCita, String hora) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET hora = ? WHERE idCita = ?");
+
+        this.ps.setTime(1, Time.valueOf(hora));
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar el estatus in situ/domicilio de una cita
+    public Citas modificaEstatusLugar(int idCita, boolean tipoLugar) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET tipoLugar = ? WHERE idCita = ?");
+
+        this.ps.setBoolean(1, tipoLugar);
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar el lugar de una cita
+    public Citas modificaLugar(int idCita, String lugar) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET lugar = ? WHERE idCita = ?");
+
+        this.ps.setString(1, lugar);
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar la promoción de una cita
+    public Citas modificaPromocion(int idCita, int fkPromocion) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET fkPromocion = ? WHERE idCita = ?");
+
+        this.ps.setInt(1, fkPromocion);
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar el importe de una cita
+    public Citas modificaImporte(int idCita, float importe) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET importe = ? WHERE idCita = ?");
+
+        this.ps.setFloat(1, importe);
+        this.ps.setInt(2, idCita);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCita;
+    }
+
+    //Modificar la nota de una cita
+    public Citas modificaNota(int idCita, String nota) throws SQLException{
+        Citas auxCita = getCitaPrimitiva(idCita);
+
+        if (auxCita == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Citas SET nota = ? WHERE idCita = ?");
+
+        this.ps.setString(1, nota);
         this.ps.setInt(2, idCita);
         this.ps.executeUpdate();
 
@@ -222,6 +336,15 @@ public class CitasDAO {
     //Agregar servicios a una cita
     public void insertaCitaServicios(int idCita, int idServicio) throws SQLException{
         this.ps = this.connection.prepareStatement("INSERT INTO CitasServicios(fkCita, fkServicio) VALUES (?, ?);");
+        ps.setInt(1, idCita);
+        ps.setInt(2, idServicio);
+        ps.executeUpdate();
+        //Conexion.close(ps);
+    }
+
+    //Eliminar servicios a una cita
+    public void eliminaCitaServicios(int idCita, int idServicio) throws SQLException{
+        this.ps = this.connection.prepareStatement("DELETE FROM CitasServicios WHERE fkCita = ? AND fkServicio = ?");
         ps.setInt(1, idCita);
         ps.setInt(2, idServicio);
         ps.executeUpdate();

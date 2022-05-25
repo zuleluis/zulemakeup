@@ -129,6 +129,46 @@ public class ClientesDAO {
         return auxCliente;
     }
 
+    //Modificar el apellido paterno de un cliente
+    public Clientes modificaApPaterno (int idCliente, String apPaterno) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET apPaterno = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, apPaterno);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+    //Modificar el apellido materno de un cliente
+    public Clientes modificaApMaterno (int idCliente, String apMaterno) throws SQLException{
+        Clientes auxCliente = getCliente(idCliente);
+
+        if (auxCliente == null){
+            return null;
+        }
+
+        this.ps = this.connection.prepareStatement ("UPDATE Clientes SET apMaterno = ? WHERE idCliente = ?");
+
+        this.ps.setString(1, apMaterno);
+        this.ps.setInt(2, idCliente);
+        this.ps.executeUpdate();
+
+        Conexion.close(ps);
+
+        return auxCliente;
+    }
+
+
+
 
 
 

@@ -14,9 +14,9 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        //Connection connection = Conexion.getConnection();
+        Connection connection = Conexion.getConnection();
         //ClientesDAO clientesDAO = new ClientesDAO(connection);
-        //CitasDAO citasDAO = new CitasDAO(connection);
+        CitasDAO citasDAO = new CitasDAO(connection);
         //ProductosDAO productosDAO = new ProductosDAO(connection);
         //PromocionesDAO promocionesDAO = new PromocionesDAO(connection);
         //ServiciosDAO serviciosDAO = new ServiciosDAO(connection);
@@ -73,7 +73,13 @@ public class Main {
         //Productos producto = productosDAO.eliminaProducto(9);
 
         //Modifica fecha de una cita
-        //productosDAO.modificaNombre(10, "Paleta de sombras Jasmine");
+        //citasDAO.modificaFecha(5, "2022-05-27");
+
+        //Modifica hora de una cita
+        //citasDAO.modificaHora(3, "12:00:00");
+
+        //Modifica estado in situ/domicilio de una cita
+        //citasDAO.modificaEstatusLugar(3, true);
 
         //Mostrar lista de promociones
         //LinkedList<Promociones> lista = promocionesDAO.getPromociones();
