@@ -24,10 +24,9 @@ public class ModificarCita extends HttpServlet {
     private String fecha;
     private String hora;
     private String tipoLugar;
-    private Boolean tLugar;
     private String lugar;
-    private int fkPromocion;
-    private float importe;
+    private String fkPromocion;
+    private String importe;
     private String nota;
 
     @Resource(name = "jdbc/database")
@@ -36,13 +35,13 @@ public class ModificarCita extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         idCita = (int) request.getSession().getAttribute("idCita");
-        this.fecha = request.getParameter("fecha");
-        this.hora = request.getParameter("hora");
-        this.tipoLugar = request.getParameter("tipoLugar");
-        this.lugar = request.getParameter("lugar");
-        //this.fkPromocion = Integer.parseInt(request.getParameter("fkPromocion"));
-        //this.importe = Float.parseFloat(request.getParameter("importe"));
-        this.nota = request.getParameter("nota");
+        fecha = request.getParameter("fecha");
+        hora = request.getParameter("hora");
+        tipoLugar = request.getParameter("tipoLugar");
+        lugar = request.getParameter("lugar");
+        fkPromocion = request.getParameter("fkPromocion");
+        importe = request.getParameter("importe");
+        nota = request.getParameter("nota");
 
         try{
             Connection connection = conexion.getConnection();
@@ -55,17 +54,20 @@ public class ModificarCita extends HttpServlet {
             request.getSession().setAttribute("servicios", citasDAO.getCitasServicios(idCita));
             request.getSession().setAttribute("promociones", promocionesDAO.getPromociones());
 
-            if (tipoLugar == null) tLugar = false;
-            else tLugar = true;
+            if (fecha != null && hora != null && lugar != null && fkPromocion != null && importe != null && nota != null){
+                citasDAO.modificaFecha(idCita, fecha);
 
-            /*if (actualizacion()){
-                request.getSession().setAttribute("modificacion", true);
-                response.sendRedirect("/zulemakeup/Citas/BuscarCita.jsp");
+                if (hora.length() == 8) citasDAO.modificaHora(idCita, hora);
+                else citasDAO.modificaHora(idCita, hora + ":00");
+
+                if (tipoLugar == null) citasDAO.modificaEstatusLugar(idCita, false);
+                else citasDAO.modificaEstatusLugar(idCita, true);
+
+                citasDAO.modificaLugar(idCita, lugar);
+                citasDAO.modificaPromocion(idCita, Integer.parseInt(fkPromocion));
+                citasDAO.modificaImporte(idCita, Float.parseFloat(importe));
+                citasDAO.modificaNota(idCita, nota);
             }
-            else{
-                request.getSession().setAttribute("modificacion", false);
-                response.sendRedirect("/zulemakeup/Citas/ModificarCita.jsp");
-            }*/
 
             connection.close();
         }
@@ -76,16 +78,4 @@ public class ModificarCita extends HttpServlet {
         response.sendRedirect("/zulemakeup/Citas/ModificarCita.jsp");
     }
 
-    private boolean actualizacion() throws SQLException{
-        boolean estado = false; //Variable que indica si se ejecutó o no la actualización
-        if (fecha != null) citasDAO.modificaFecha(idCita, fecha);
-        if (hora != null) citasDAO.modificaHora(idCita, hora);
-        if (tipoLugar != null) citasDAO.modificaEstatusLugar(idCita, Boolean.parseBoolean(tipoLugar));
-        if (lugar != null) citasDAO.modificaLugar(idCita, lugar);
-        //if (fkPromocion != null) citasDAO.modificaPromocion(idCita, fkPromocion);
-        //if (importe != null) citasDAO.modificaFecha(idCita, fecha);
-        if (nota != null) citasDAO.modificaNota(idCita, fecha);
-
-        return estado;
-    }
 }

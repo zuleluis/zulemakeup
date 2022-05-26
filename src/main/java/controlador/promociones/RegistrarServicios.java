@@ -1,3 +1,5 @@
+//Agrega servicios a una promoción
+
 package controlador.promociones;
 
 import datos.DAO.PromocionesDAO;

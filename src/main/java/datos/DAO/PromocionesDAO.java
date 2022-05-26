@@ -37,10 +37,10 @@ public class PromocionesDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(Promociones promocion: lista){
+        /*for(Promociones promocion: lista){
             String disponibilidad = (promocion.isEstado() ? "No disponible" :"Disponible");
             System.out.println("Promocion: " + promocion.getIdPromocion() + " " + promocion.getNombrePromocion() + ' ' + promocion.getPrecio() + ' ' + disponibilidad);
-        }
+        }*/
 
         return lista;
     }
@@ -62,8 +62,8 @@ public class PromocionesDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        String disponibilidad = (auxPromocion.isEstado() ? "No disponible" :"Disponible");
-        System.out.println("Promocion: " + auxPromocion.getNombrePromocion() + ' ' + auxPromocion.getPrecio() + ' ' + disponibilidad);
+        //String disponibilidad = (auxPromocion.isEstado() ? "No disponible" :"Disponible");
+        //System.out.println("Promocion: " + auxPromocion.getNombrePromocion() + ' ' + auxPromocion.getPrecio() + ' ' + disponibilidad);
 
         return auxPromocion;
     }
@@ -125,10 +125,10 @@ public class PromocionesDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println("La promoción incluye");
+        /*System.out.println("La promoción incluye");
         for(PromoServicios servicio: lista){
             System.out.println(servicio);
-        }
+        }*/
 
         return lista;
     }

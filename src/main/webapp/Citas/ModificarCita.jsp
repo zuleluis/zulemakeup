@@ -10,6 +10,7 @@
 <body>
 <main class="main">
     <div class="container">
+        <form method="post" action="/zulemakeup/ModificarCita">
         <%
             JoinCitas cita = (JoinCitas) session.getAttribute("datos");
             LinkedList<CitasServicios> lista = (LinkedList)session.getAttribute("servicios");
@@ -47,6 +48,10 @@
         <%
             }
         %>
+        <p class="center-content">
+            <input type="submit" value="Modificar"/>
+        </p>
+    </form>
     </div>
 </main>
 
