@@ -1,4 +1,6 @@
 <%@ page import="modelo.Clientes" %>
+<%@ page import="java.util.LinkedList" %>
+<%@ page import="modelo.Citas" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
@@ -18,6 +20,7 @@
         %><%
             Boolean estado = (Boolean) session.getAttribute("encontrado");
             Clientes cliente = (Clientes) session.getAttribute("datos");
+            LinkedList<Citas> citas = (LinkedList) session.getAttribute("datosCitas");
 
             if (estado != null){
                 if (estado){
@@ -29,6 +32,19 @@
                         <td>Ciudad: <%out.print(cliente.getCiudad());%></td>
                         <td>Teléfono: <%out.print(cliente.getNumTel());%></td>
                     </tr>
+                    <p/>
+                    <p/>
+                    <td>Citas: </td>
+                    <table>
+                        <%if(citas != null){
+                            for (Citas cita : citas){%>
+                                <td><%out.print(cita.getFecha());%></td>
+                                <td><%out.print(cita.getHora());%></td>
+                                <td><%if (cita.isBorrar()) out.print("  - Cancelada");%></td>
+                                <tr/>
+                            <%}
+                        }%>
+                    </table>
                     <p/>
                     <p/>
                     <form action="../index.jsp">
@@ -45,6 +61,7 @@
             }
             session.removeAttribute("datos");
             session.removeAttribute("encontrado");
+            session.removeAttribute("datosCitas");
         %>
     </div>
 </main>

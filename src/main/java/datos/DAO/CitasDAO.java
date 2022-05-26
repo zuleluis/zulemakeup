@@ -315,7 +315,9 @@ public class CitasDAO {
         LinkedList<Citas> lista = new LinkedList<>();
 
         this.ps = this.connection.prepareStatement("SELECT fecha, hora, tipoLugar, lugar, importe, nota, borrar FROM Citas\n" +
-                "WHERE fkCliente = 2");
+                "WHERE fkCliente = ?");
+
+        this.ps.setInt(1, idCliente);
         this.rs = ps.executeQuery();
 
         while (rs.next()){
@@ -326,9 +328,9 @@ public class CitasDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        /*for(Citas elemento: lista){
+        for(Citas elemento: lista){
             System.out.println(elemento);
-        }*/
+        }
 
         return lista;
     }

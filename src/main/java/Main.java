@@ -47,7 +47,7 @@ public class Main {
         //LinkedList<CitasServicios> lista = citasDAO.getCitasServicios(1);
 
         //Muestra las citas por cliente
-        //citasDAO.getCitasCliente(2);
+        //citasDAO.getCitasCliente(4);
 
         //Registra una cita
         //Citas cita = new Citas(1, "2022-05-05", "13:00:00", true, "Facultad de Ingenieria", 1, 250.00F, "Pestañas buchonas por favor");
