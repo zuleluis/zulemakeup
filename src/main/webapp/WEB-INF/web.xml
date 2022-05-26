@@ -101,6 +101,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>RegistrarServicios</servlet-name>
+    <servlet-class>controlador.promociones.RegistrarServicios</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>ListaServicios</servlet-name>
     <servlet-class>controlador.servicios.ListaServicios</servlet-class>
   </servlet>
@@ -217,6 +222,11 @@
   <servlet-mapping>
     <servlet-name>EliminarPromocion</servlet-name>
     <url-pattern>/EliminarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>RegistrarServicios</servlet-name>
+    <url-pattern>/RegistrarServicios</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

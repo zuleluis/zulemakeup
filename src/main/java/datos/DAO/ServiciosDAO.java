@@ -23,10 +23,11 @@ public class ServiciosDAO {
         this.rs = ps.executeQuery();
 
         while (rs.next()){
+            int idServicio = rs.getInt("idServicio");
             String nombreServicio = rs.getString("nombreServicio");
             float precio = rs.getFloat("precio");
             String descripcion = rs.getString("descripcion");
-            servicio = new Servicios(nombreServicio, precio, descripcion);
+            servicio = new Servicios(idServicio, nombreServicio, precio, descripcion);
             lista.add(servicio);
         }
 
