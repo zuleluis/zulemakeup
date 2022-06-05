@@ -47,6 +47,9 @@
         </tr>
         <%
             }
+            session.removeAttribute("datos");
+            session.removeAttribute("servicios");
+            session.removeAttribute("promociones");
         %>
         <p class="center-content">
             <input type="submit" value="Modificar"/>

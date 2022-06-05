@@ -26,6 +26,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ModificarCliente</servlet-name>
+    <servlet-class>controlador.clientes.ModificarCliente</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>ListaCitas</servlet-name>
     <servlet-class>controlador.citas.ListaCitas</servlet-class>
   </servlet>
@@ -147,6 +152,11 @@
   <servlet-mapping>
     <servlet-name>EliminarCliente</servlet-name>
     <url-pattern>/EliminarCliente</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModificarCliente</servlet-name>
+    <url-pattern>/ModificarCliente</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

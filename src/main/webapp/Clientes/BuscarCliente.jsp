@@ -47,7 +47,7 @@
                     </table>
                     <p/>
                     <p/>
-                    <form action="../index.jsp">
+                    <form method="post" action="/zulemakeup/ModificarCliente">
                         <p class="center-content"><input type="submit" value="Modificar"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarCliente">
