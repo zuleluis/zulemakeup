@@ -198,7 +198,7 @@ public class ProductosDAO {
     }
 
     //Modificar el tipo de aplicación de un producto
-    public Productos modificaAplicación(int idProducto, int fkAplicacion) throws SQLException{
+    public Productos modificaAplicacion(int idProducto, int fkAplicacion) throws SQLException{
         Productos auxProducto = getProductoPrimitivo(idProducto);
 
         if (auxProducto == null){

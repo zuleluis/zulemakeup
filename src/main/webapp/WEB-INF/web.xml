@@ -86,6 +86,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ModificarProducto</servlet-name>
+    <servlet-class>controlador.productos.ModificarProducto</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>ListaPromociones</servlet-name>
     <servlet-class>controlador.promociones.ListaPromociones</servlet-class>
   </servlet>
@@ -212,6 +217,11 @@
   <servlet-mapping>
     <servlet-name>EliminarProducto</servlet-name>
     <url-pattern>/EliminarProducto</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModificarProducto</servlet-name>
+    <url-pattern>/ModificarProducto</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

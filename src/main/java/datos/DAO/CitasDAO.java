@@ -68,7 +68,7 @@ public class CitasDAO {
 
     //Obtiene las citas por idCita
     public JoinCitas getCita(int idCita) throws SQLException{
-        this.ps = this.connection.prepareStatement("SELECT Citas.idCita, Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
+        this.ps = this.connection.prepareStatement("SELECT Citas.fkCliente, Citas.fkPromocion, Citas.idCita, Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
                 "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion\n" +
                 "WHERE idCita = ?");
@@ -83,7 +83,7 @@ public class CitasDAO {
 
         cliente = new Clientes(rs.getString("nombre"), rs.getString("apPaterno"), rs.getString("apMaterno"));
         promocion = new Promociones(rs.getString("nombrePromocion"));
-        cita = new Citas(rs.getInt("idCita"), rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"), rs.getString("lugar"), rs.getFloat("importe"), rs.getString("nota"), rs.getBoolean("borrar"));
+        cita = new Citas(rs.getInt("idCita"), rs.getInt("fkCliente"), rs.getString("fecha"), rs.getString("hora"), rs.getBoolean("tipoLugar"), rs.getString("lugar"), rs.getInt("fkPromocion"), rs.getFloat("importe"), rs.getString("nota"), rs.getBoolean("borrar"));
 
         JoinCitas auxCita = new JoinCitas(cliente, promocion, cita);
 

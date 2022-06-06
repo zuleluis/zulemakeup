@@ -30,11 +30,11 @@
             <tr>Tipo de producto: <%out.print(producto.getTipo().getNombre());%></tr>
             <tr>Aplicación: <%out.print(producto.getAplicacion().getNombre());%></tr>
             <tr>Cantidad: <%out.print(producto.getProducto().getCantidad());%></tr>
-            <tr>Disponibilidad: <%if (producto.getProducto().isAgotado()) out.print("Disponible"); else out.print("Agotado");%></tr>
+            <tr>Disponibilidad: <%if (producto.getProducto().isAgotado()) out.print("Agotado"); else out.print("Disponible");%></tr>
         </tr>
             <p/>
             <p/>
-            <form action="../index.jsp">
+            <form method="post" action="/zulemakeup/ModificarProducto">
                 <p class="center-content"><input type="submit" value="Modificar"/></p>
             </form>
             <form method="post" action="/zulemakeup/EliminarProducto">

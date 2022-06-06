@@ -40,7 +40,7 @@
             <select name="fkPromocion" >
                 <%if(listapromos != null){
                     for (Promociones promocion : listapromos){%>
-                <option value ="<%=promocion.getIdPromocion()%>"><%=promocion.getNombrePromocion()%></option>
+                <option value ="<%=promocion.getIdPromocion()%>" <%if (cita.getCita().getFkPromocion() == promocion.getIdPromocion()){%>selected<%;}%>><%=promocion.getNombrePromocion()%></option>
                 <%}
                 }%>
             </select>
