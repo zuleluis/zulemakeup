@@ -30,7 +30,8 @@ public class CitasDAO {
 
         this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
-                "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion");
+                "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion\n" +
+                "ORDER BY Citas.fecha, Citas.hora");
         this.rs = ps.executeQuery();
 
         while (rs.next()){

@@ -47,6 +47,8 @@
             <p>Importe <input type="number" name = "importe"> </p>
             <p>Nota <input type="text" name = "nota"> </p>
 
+            <%--Aqui en el submit, como action, puedo poner que se redirija a otro JSP que
+            permita registrar los servicios que va a incluir la cita--%>
             <p class="center-content">
                 <input type="submit" value="Registrar"/>
             </p>
