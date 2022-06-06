@@ -29,7 +29,7 @@
                         </tr>
                         <p/>
                         <p/>
-                        <form action="../index.jsp">
+                        <form method="post" action="/zulemakeup/ModificarServicio">
                             <p class="center-content"><input type="submit" value="Modificar"/></p>
                         </form>
                         <form method="post" action="/zulemakeup/EliminarServicio">

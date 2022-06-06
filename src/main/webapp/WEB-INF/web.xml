@@ -140,6 +140,11 @@
     <servlet-class>controlador.servicios.EliminarServicio</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ModificarServicio</servlet-name>
+    <servlet-class>controlador.servicios.ModificarServicio</servlet-class>
+  </servlet>
+
 
 
 
@@ -277,6 +282,11 @@
   <servlet-mapping>
     <servlet-name>EliminarServicio</servlet-name>
     <url-pattern>/EliminarServicio</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModificarServicio</servlet-name>
+    <url-pattern>/ModificarServicio</url-pattern>
   </servlet-mapping>
 
 </web-app>
