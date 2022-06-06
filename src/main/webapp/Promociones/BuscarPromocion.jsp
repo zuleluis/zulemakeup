@@ -14,6 +14,7 @@
             <p class="center-content">
                 <input type="submit" value="Buscar"/>
             </p>
+        </form>
             <%
             Boolean estado = (Boolean) session.getAttribute("encontrado");
             Promociones promocion = (Promociones) session.getAttribute("datos");
@@ -39,7 +40,7 @@
                     </tr>
                     <p/>
                     <p/>
-                    <form action="../index.jsp">
+                    <form method="post" action="/zulemakeup/ModificarPromocion">
                         <p class="center-content"><input type="submit" value="Modificar"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarPromocion">
@@ -53,7 +54,6 @@
             session.removeAttribute("encontrado");
             session.removeAttribute("servicios");
             %>
-        </form>
     </div>
 </main>
 

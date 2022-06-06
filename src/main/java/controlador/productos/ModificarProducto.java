@@ -64,14 +64,6 @@ public class ModificarProducto extends HttpServlet {
                 if (agotado == null) productosDAO.modificaDisponibilidad(idProducto, false);
                 else productosDAO.modificaDisponibilidad(idProducto, true);
             }
-
-            System.out.println(fkMarca);
-            System.out.println(nombreProducto);
-            System.out.println(fkAplicacion);
-            System.out.println(fkTipo);
-            System.out.println(modelo);
-            System.out.println(cantidad);
-            System.out.println(agotado);
         }
         catch (SQLException e){
             e.printStackTrace();

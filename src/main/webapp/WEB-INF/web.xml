@@ -111,6 +111,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>ModificarPromocion</servlet-name>
+    <servlet-class>controlador.promociones.ModificarPromocion</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>RegistrarServicios</servlet-name>
     <servlet-class>controlador.promociones.RegistrarServicios</servlet-class>
   </servlet>
@@ -242,6 +247,11 @@
   <servlet-mapping>
     <servlet-name>EliminarPromocion</servlet-name>
     <url-pattern>/EliminarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ModificarPromocion</servlet-name>
+    <url-pattern>/ModificarPromocion</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
