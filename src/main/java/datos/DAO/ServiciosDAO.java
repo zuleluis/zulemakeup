@@ -34,9 +34,9 @@ public class ServiciosDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(Servicios servicio: lista){
+        /*for(Servicios servicio: lista){
             System.out.println("Servicio: " + servicio.getNombreServicio() + ' ' + servicio.getPrecio() + ' ' + servicio.getDescripcion());
-        }
+        }*/
 
         return lista;
     }
@@ -58,7 +58,7 @@ public class ServiciosDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println("Servicio: " + auxServicio.getNombreServicio() + ' ' + auxServicio.getPrecio() + ' ' + auxServicio.getDescripcion());
+        //System.out.println("Servicio: " + auxServicio.getNombreServicio() + ' ' + auxServicio.getPrecio() + ' ' + auxServicio.getDescripcion());
 
         return auxServicio;
     }

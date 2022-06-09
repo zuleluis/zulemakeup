@@ -117,8 +117,10 @@ public class CitasDAO {
     }
 
     //Inserta una cita
-    public void insertaCita(Citas cita) throws SQLException{
-        this.ps = this.connection.prepareStatement("INSERT INTO Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+    public int insertaCita(Citas cita) throws SQLException{
+        int idCita;
+
+        this.ps = this.connection.prepareStatement("INSERT INTO Citas(fkCliente, fecha, hora, tipoLugar, lugar, fkPromocion, importe, nota, borrar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, false);");
         ps.setInt(1, cita.getFkCliente());
         ps.setDate(2, java.sql.Date.valueOf(cita.getFecha()));
         ps.setTime(3, java.sql.Time.valueOf(cita.getHora()));
@@ -129,6 +131,34 @@ public class CitasDAO {
         ps.setString(8, cita.getNota());
         ps.executeUpdate();
         //Conexion.close(ps);
+
+        this.ps = this.connection.prepareStatement("SELECT * FROM Citas\n" +
+                "WHERE fkCliente = ? and fecha = ? and hora = ? and tipoLugar = ? and \n" +
+                "lugar = ? and fkPromocion = ? and importe = ? and nota = ?");
+
+        this.ps.setInt(1, cita.getFkCliente());
+        this.ps.setDate(2, java.sql.Date.valueOf(cita.getFecha()));
+        this.ps.setTime(3, java.sql.Time.valueOf(cita.getHora()));
+        this.ps.setBoolean(4, cita.isTipoLugar());
+        this.ps.setString(5, cita.getLugar());
+        this.ps.setInt(6, cita.getFkPromocion());
+        this.ps.setFloat(7, cita.getImporte());
+        this.ps.setString(8, cita.getNota());
+
+        this.rs = this.ps.executeQuery();
+
+        if (!this.rs.next()){
+            Conexion.close(rs);
+            Conexion.close(ps);
+            return 0;
+        }
+
+        idCita = rs.getInt("idCita");
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return idCita;
     }
 
     //Elimina una cita. En realidad realizo un safe delete, para no borrar por completo los registros, solo "deshabilitarlos"

@@ -39,9 +39,9 @@ public class ClientesDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(Clientes cliente : lista){
+        /*for(Clientes cliente : lista){
             System.out.println("Cliente: " + cliente.getIdCliente() + " " + cliente.getNombre() + ' ' + cliente.getApPaterno() + ' ' + cliente.getApMaterno());
-        }
+        }*/
 
         return lista;
     }

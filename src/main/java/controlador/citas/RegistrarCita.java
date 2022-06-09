@@ -1,6 +1,7 @@
 package controlador.citas;
 
 import datos.DAO.CitasDAO;
+import datos.DAO.ServiciosDAO;
 import modelo.Citas;
 
 
@@ -15,6 +16,8 @@ import java.sql.SQLException;
 
 @WebServlet(name = "RegistrarCita", urlPatterns = {"/RegistrarCita"})
 public class RegistrarCita extends HttpServlet {
+    private Citas cita;
+    private int idCita;
     private int fkCliente;
     private String fecha;
     private String hora;
@@ -23,6 +26,7 @@ public class RegistrarCita extends HttpServlet {
     private int fkPromocion;
     private float importe;
     private String nota;
+    private String[] fkServicio;
 
     @Resource(name = "jdbc/database")
     private DataSource conexion;
@@ -37,6 +41,7 @@ public class RegistrarCita extends HttpServlet {
         fkPromocion = Integer.parseInt(request.getParameter("fkPromocion"));
         importe = Float.parseFloat(request.getParameter("importe"));
         nota = request.getParameter("nota");
+        fkServicio = request.getParameterValues("fkServicio");
 
         try{
             Connection connection = conexion.getConnection();
@@ -50,9 +55,18 @@ public class RegistrarCita extends HttpServlet {
             if (tipoLugar == null) checkbox = false;
             else checkbox = true;
 
-            Citas cita = new Citas(fkCliente, fecha, hora, checkbox, lugar, fkPromocion, importe, nota, borrar);
-            citasDAO.insertaCita(cita);
+            cita = new Citas(fkCliente, fecha, hora, checkbox, lugar, fkPromocion, importe, nota, borrar);
+            idCita = citasDAO.insertaCita(cita);
+
+
+            for(String item : fkServicio){
+                System.out.println(item);
+                citasDAO.insertaCitaServicios(idCita, Integer.parseInt(item));
+            }
+
             connection.close();
+
+
         }
         catch (SQLException e){
             e.printStackTrace();

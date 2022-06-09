@@ -1,6 +1,7 @@
 <%@ page import="modelo.Clientes" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="modelo.Promociones" %>
+<%@ page import="modelo.Servicios" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,7 +24,7 @@
 </header>
 
 <main class="main">
-    <div class="container">
+    <div class="margenSup">
         <form method="post" action="/zulemakeup/RegistrarCita">
             <p>Cliente <select name="fkCliente" >
                     <%
@@ -53,16 +54,30 @@
                 <%
                         }
                     }
-                    session.removeAttribute("clientes");
-                    session.removeAttribute("promociones");
                 %>
+
             </select>
+            </p>
+            <p> Servicios
+                <select name="fkServicio" multiple>
+                    <%
+                        LinkedList<Servicios> listaServicios = (LinkedList)session.getAttribute("servicios");
+                        if (listaServicios != null){
+                            for (Servicios servicio : listaServicios){
+                    %>
+                    <option value ="<%=servicio.getIdServicio()%>"><%=servicio.getNombreServicio()%></option>
+                    <%
+                            }
+                        }
+                        session.removeAttribute("clientes");
+                        session.removeAttribute("promociones");
+                        session.removeAttribute("servicios");
+                    %>
+                </select>
             </p>
             <p>Importe <input type="number" name = "importe"> </p>
             <p>Nota <input type="text" name = "nota"> </p>
 
-            <%--Aqui en el submit, como action, puedo poner que se redirija a otro JSP que
-            permita registrar los servicios que va a incluir la cita--%>
             <p class="center-content">
                 <input type="submit" value="Registrar"/>
             </p>
