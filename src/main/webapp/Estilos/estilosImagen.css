@@ -1,0 +1,10 @@
+.responsive{
+    display: block;
+    width: 100%;
+    z-index: 0;
+    margin: auto;
+}
+
+.escala50{
+    max-width: 50%;
+}

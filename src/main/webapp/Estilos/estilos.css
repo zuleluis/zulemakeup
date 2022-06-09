@@ -9,7 +9,7 @@ ul.menu {
     right: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 li.menu {
@@ -25,10 +25,67 @@ li a.menu {
     font-family: "NEXT ART";
 }
 
+a.texto{
+    text-decoration: none;
+    color: black;
+}
+
 li a:hover:not(.active) {
     background-color: #7e5b51;
 }
 
 .active {
     background-color: #e3b7a0;
+}
+
+.gridContainer{
+    display: grid;
+    column-gap: 0;
+    text-align: center;
+    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+}
+
+.gridItem1 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.gridItem2 {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.gridItem3 {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+.gridItem4 {
+    grid-column: 4;
+    grid-row: 5;
+}
+
+.gridItem5 {
+    grid-column: 5;
+    grid-row: 5;
+}
+
+.montserrat18{
+    font-family: Montserrat;
+    font-size: 18px;
+}
+
+.boton{
+    border: 3px solid #b4846d;
+    border-radius: 50px;
+    background-color: #b4846d;
+    display: inline-block;
+    padding-inline: 10px;
+    color: white;
+
+}
+
+.margenSup{
+    margin-top: 20px;
 }
