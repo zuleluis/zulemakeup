@@ -24,6 +24,10 @@
 
 <main class="main">
     <div class="container">
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
         <form method="post" action="/zulemakeup/BuscarPromocion">
             <p>Id <input type="number" name="idpromocion"/></p>
             <p class="center-content">
@@ -55,11 +59,18 @@
                     </tr>
                     <p/>
                     <p/>
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
+        <h1>Lista de Promociones</h1>
                     <form method="post" action="/zulemakeup/ModificarPromocion">
-                        <p class="center-content"><input type="submit" value="Modificar"/></p>
+                        <p class="center-content"><input type="submit" value="Modificar datos"/></p>
+                    </form>
+                    <form method="post" action="/zulemakeup/EliminarServicios">
+                        <p class="center-content"><input type="submit" value="Modificar servicios"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarPromocion">
-                        <p class="center-content"><input type="submit" value="Eliminar"/></p>
+                        <p class="center-content"><input type="submit" value="Eliminar promocion"/></p>
                     </form>
                     <%
                     }

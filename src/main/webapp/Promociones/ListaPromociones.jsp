@@ -1,6 +1,7 @@
 <%@ page import="java.util.LinkedList" %>
 <%@ page import="modelo.Promociones" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Lista de promociones</title>
@@ -23,6 +24,7 @@
 
 <main class="main">
     <div class="container">
+        <h1>Lista de Promociones</h1>
         <table align="center">
             <thead>
             <tr>

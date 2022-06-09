@@ -115,6 +115,12 @@
     <servlet-class>controlador.promociones.ModificarPromocion</servlet-class>
   </servlet>
 
+  <!-- Este servlet borra uno a uno los servicios que tenga una promocion-->
+  <servlet>
+    <servlet-name>EliminarServicios</servlet-name>
+    <servlet-class>controlador.promociones.EliminarServicios</servlet-class>
+  </servlet>
+
   <servlet>
     <servlet-name>RegistrarServicios</servlet-name>
     <servlet-class>controlador.promociones.RegistrarServicios</servlet-class>
@@ -257,6 +263,11 @@
   <servlet-mapping>
     <servlet-name>ModificarPromocion</servlet-name>
     <url-pattern>/ModificarPromocion</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EliminarServicios</servlet-name>
+    <url-pattern>/EliminarServicios</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
