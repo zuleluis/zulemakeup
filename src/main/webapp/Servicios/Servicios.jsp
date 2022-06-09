@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Registrar servicio</title>
+    <title>Servicios</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
@@ -18,21 +18,6 @@
         </ul>
     </nav>
 </header>
-
-
-<main class="main">
-    <div class="container">
-        <form method="post" action="/zulemakeup/RegistrarServicio">
-            <p>Nombre <input type="text" name = "nombreServicio"> </p>
-            <p>Precio <input type="number" name = "precio"> </p>
-            <p>Descripción <input type="text" name = "descripcion"> </p>
-
-            <p class="center-content">
-                <input type="submit" value="Registrar"/>
-            </p>
-        </form>
-    </div>
-</main>
 
 </body>
 </html>

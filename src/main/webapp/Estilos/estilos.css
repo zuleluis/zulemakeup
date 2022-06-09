@@ -1,0 +1,34 @@
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7e5b51;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+li.menu {
+    float: left;
+}
+
+li a.menu {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "NEXT ART";
+}
+
+li a:hover:not(.active) {
+    background-color: #7e5b51;
+}
+
+.active {
+    background-color: #e3b7a0;
+}

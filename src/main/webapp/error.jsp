@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Error</title>
+    <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
 <main>
