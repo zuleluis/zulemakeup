@@ -17,11 +17,10 @@
 }
 
 ul.menu {
-    list-style-type: none;
+    background: #7e5b51;
+    list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #7e5b51;
     position: fixed;
     top: 0;
     right: 0;
@@ -50,7 +49,7 @@ a.texto{
 }
 
 li a:hover:not(.active) {
-    background-color: #7e5b51;
+    background-color: #b4846d;
 }
 
 .active {
@@ -89,6 +88,21 @@ li a:hover:not(.active) {
     grid-column: 5;
     grid-row: 5;
 }
+/*------------*/
+.gridItemA{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.gridItemB{
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.gridItemC{
+    grid-column: 3;
+    grid-row: 3;
+}
 
 .montserrat18{
     font-family: "Montserrat";
@@ -102,7 +116,6 @@ li a:hover:not(.active) {
     display: inline-block;
     padding-inline: 10px;
     color: white;
-
 }
 
 .margenSup{
@@ -111,4 +124,52 @@ li a:hover:not(.active) {
 
 .margenNav{
     margin-top: 3.5rem;
+}
+/***Navbar para el resto del sitio***/
+
+li.navBar {
+    background: #7e5b51;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+li a{
+    color: #fff;
+}
+
+li:hover,
+li:focus-within{
+    background: #e3b7a0;
+    cursor: pointer;
+}
+
+li:focus-within a{
+    outline: none;
+}
+
+ul li ul{
+    background: #e3b7a0;
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    transition: all 0.5s ease;
+    left: 0;
+    display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+ul li ul li{
+    clear: both;
+    width: 100%;
 }
