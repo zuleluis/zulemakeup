@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-    <nav class="navigation">
+    <nav>
         <ul class="menu">
             <li class="menu"> <a class="menu" href="/zulemakeup">Inicio</a> </li>
             <li class="menu"> <a class="menu" href="/zulemakeup/Citas/Citas.jsp">Citas</a> </li>
@@ -18,6 +18,14 @@
         </ul>
     </nav>
 </header>
+
+<main>
+    <div class="margenNav">
+        <li> <a href="/zulemakeup/Clientes/ListaClientes.jsp">Mostrar lista de clientes</a> </li>
+        <li> <a href="/zulemakeup/Clientes/RegistrarCliente.jsp">Registrar cliente</a> </li>
+        <li> <a href="/zulemakeup/Clientes/BuscarCliente.jsp">Buscar cliente</a> </li>
+    </div>
+</main>
 
 </body>
 </html>

@@ -19,5 +19,13 @@
     </nav>
 </header>
 
+<main>
+    <div class="margenNav">
+        <li> <a href="/zulemakeup/Servicios/ListaServicios.jsp">Mostrar lista de servicios</a> </li>
+        <li> <a href="/zulemakeup/Servicios/RegistrarServicio.jsp">Registrar servicio</a> </li>
+        <li> <a href="/zulemakeup/Servicios/BuscarServicio.jsp">Buscar servicio</a> </li>
+    </div>
+</main>
+
 </body>
 </html>

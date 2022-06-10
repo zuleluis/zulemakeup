@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Promociones</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
@@ -18,6 +18,15 @@
         </ul>
     </nav>
 </header>
+
+<main>
+    <div class="margenNav">
+        <li> <a href="/zulemakeup/Promociones/ListaPromociones.jsp">Mostrar lista de promociones</a> </li>
+        <li> <a href="/zulemakeup/Promociones/RegistrarPromocion.jsp">Registrar promocion</a> </li>
+        <li> <a href="/zulemakeup/Promociones/BuscarPromocion.jsp">Buscar promocion</a> </li>
+        <li> <a href="/zulemakeup/Promociones/AgregaServicios.jsp">Agregar servicios a promoción</a> </li>
+    </div>
+</main>
 
 </body>
 </html>

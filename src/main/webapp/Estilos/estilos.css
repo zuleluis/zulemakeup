@@ -10,6 +10,7 @@ ul.menu {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    max-height: 3.7rem;
 }
 
 li.menu {
@@ -72,7 +73,7 @@ li a:hover:not(.active) {
 }
 
 .montserrat18{
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 18px;
 }
 
@@ -88,4 +89,8 @@ li a:hover:not(.active) {
 
 .margenSup{
     margin-top: 20px;
+}
+
+.margenNav{
+    margin-top: 3.5rem;
 }

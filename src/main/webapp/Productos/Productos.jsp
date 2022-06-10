@@ -19,5 +19,13 @@
     </nav>
 </header>
 
+<main>
+    <div class="margenNav">
+        <li> <a href="/zulemakeup/Productos/ListaProductos.jsp">Mostrar lista de productos</a> </li>
+        <li> <a href="/zulemakeup/Productos/RegistrarProducto.jsp">Registrar producto</a> </li>
+        <li> <a href="/zulemakeup/Productos/BuscarProducto.jsp">Buscar producto</a> </li>
+    </div>
+</main>
+
 </body>
 </html>
