@@ -29,6 +29,11 @@ public class Servicios implements Serializable {
         this.nombreServicio = nombreServicio;
     }
 
+    public Servicios(int idServicio, String nombreServicio){
+        this.idServicio = idServicio;
+        this.nombreServicio = nombreServicio;
+    }
+
     public int getIdServicio() {
         return idServicio;
     }

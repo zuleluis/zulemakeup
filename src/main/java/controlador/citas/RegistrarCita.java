@@ -60,7 +60,7 @@ public class RegistrarCita extends HttpServlet {
 
 
             for(String item : fkServicio){
-                System.out.println(item);
+                //System.out.println(item);
                 citasDAO.insertaCitaServicios(idCita, Integer.parseInt(item));
             }
 

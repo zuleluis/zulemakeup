@@ -66,7 +66,7 @@
                     <form method="post" action="/zulemakeup/ModificarPromocion">
                         <p class="center-content"><input type="submit" value="Modificar datos"/></p>
                     </form>
-                    <form method="post" action="/zulemakeup/EliminarServicios">
+                    <form method="get" action="/zulemakeup/MapeoServicios">
                         <p class="center-content"><input type="submit" value="Modificar servicios"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarPromocion">

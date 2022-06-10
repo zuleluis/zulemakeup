@@ -122,6 +122,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>MapeoServicios</servlet-name>
+    <servlet-class>controlador.promociones.MapeoServicios</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>RegistrarServicios</servlet-name>
     <servlet-class>controlador.promociones.RegistrarServicios</servlet-class>
   </servlet>
@@ -268,6 +273,11 @@
   <servlet-mapping>
     <servlet-name>EliminarServicios</servlet-name>
     <url-pattern>/EliminarServicios</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>MapeoServicios</servlet-name>
+    <url-pattern>/MapeoServicios</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

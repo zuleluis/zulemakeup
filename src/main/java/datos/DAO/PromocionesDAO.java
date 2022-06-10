@@ -107,7 +107,7 @@ public class PromocionesDAO {
     //Muestra los servicios de una promoción
     public LinkedList<PromoServicios> getPromoServicios(int idPromocion) throws SQLException{
         LinkedList<PromoServicios> lista = new LinkedList<>();
-        this.ps = this.connection.prepareStatement("SELECT Servicios.nombreServicio FROM PromoServicios\n" +
+        this.ps = this.connection.prepareStatement("SELECT Servicios.idServicio, Servicios.nombreServicio FROM PromoServicios\n" +
                 "JOIN Servicios ON PromoServicios.fkServicio = Servicios.idServicio\n" +
                 "WHERE fkPromocion = ?");
 
@@ -115,7 +115,7 @@ public class PromocionesDAO {
         this.rs = this.ps.executeQuery();
 
         while (this.rs.next()){
-            servicio = new Servicios(rs.getString("nombreServicio"));
+            servicio = new Servicios(rs.getInt("idServicio"), rs.getString("nombreServicio"));
             PromoServicios auxPromoServicio = new PromoServicios(servicio);
 
             lista.add(auxPromoServicio);

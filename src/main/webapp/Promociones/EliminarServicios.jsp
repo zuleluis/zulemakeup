@@ -33,11 +33,13 @@
                     <%
                         LinkedList<PromoServicios> lista = (LinkedList)session.getAttribute("servicios");
                         if(lista != null){
+                            session.setAttribute("cargado", true);
                             for (PromoServicios servicio : lista){%>
                             <option value ="<%=servicio.getServicio().getIdServicio()%>"><%=servicio.getServicio().getNombreServicio()%></option>
                             <%}
                         }
                         session.removeAttribute("servicios");
+                        session.removeAttribute("cargado");
                     %>
                 </select>
             </table>
