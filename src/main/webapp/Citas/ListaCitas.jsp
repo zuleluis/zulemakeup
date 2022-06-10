@@ -6,6 +6,7 @@
 <head>
     <title>Lista de citas</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosTabla.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,33 +57,35 @@
 </header>
 
 <main class="main">
-    <div class="container">
+    <div class="margenNav">
         <h1>Lista de citas</h1>
         <table align="center">
             <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Lugar</th>
-                <th>Promoción</th>
-                <th>Importe</th>
-                <th>Nota</th>
-                <th>Estado</th>
-            </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                    <th>Promoción</th>
+                    <th>Importe</th>
+                    <th>Nota</th>
+                    <th>Estado</th>
+                </tr>
             </thead>
+            <tbody>
             <%
                 LinkedList<JoinCitas> lista = (LinkedList)session.getAttribute("datos");
                 if (lista != null){
                     for (JoinCitas cita : lista){
             %><tr>
                 <td><%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></td>
-                <td><%out.print(cita.getCita().getFecha() + " " + cita.getCita().getHora());%></td>
+                <td><%out.print(cita.getCita().getFecha() + " , " + cita.getCita().getHora());%></td>
                 <td><%if (cita.getCita().isTipoLugar() == false) out.print("Visita en casa"); else out.print(cita.getCita().getLugar());%></td>
                 <td><%out.print(cita.getPromocion().getNombrePromocion());%></td>
                 <td><%out.print(cita.getCita().getImporte());%></td>
                 <td><%out.print(cita.getCita().getNota());%></td>
                 <td><%if (cita.getCita().isBorrar()) out.print("Cancelada"); else out.print("Activa");%></td>
-            </tr><%
+            </tr>
+            </tbody><%
                 }
             }
             else {

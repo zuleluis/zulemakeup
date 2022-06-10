@@ -6,6 +6,7 @@
 <head>
     <title>Lista de clientes</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosTabla.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,7 +57,7 @@
 </header>
 
 <main class="main">
-    <div class="container">
+    <div class="margenNav">
         <h1>Lista de clientes</h1>
         <table align="center">
             <thead>
@@ -68,6 +69,7 @@
                     <th>Teléfono</th>
                 </tr>
             </thead>
+            <tbody>
             <%
                 LinkedList<Clientes> lista = (LinkedList)session.getAttribute("datos");
                 //System.out.println(lista);
@@ -79,7 +81,9 @@
                             <td><%out.print(cliente.getCalle() + " " + cliente.getNumero() + " " + cliente.getColonia());%></td>
                             <td><%out.print(cliente.getCiudad());%></td>
                             <td><%out.print(cliente.getNumTel());%></td>
-                        </tr><%
+                        </tr>
+            </tbody>
+                <%
                     }
                 }
                 else {
@@ -90,6 +94,5 @@
         </table>
     </div>
 </main>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 </html>

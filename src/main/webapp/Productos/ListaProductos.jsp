@@ -5,6 +5,7 @@
 <head>
     <title>Lista de productos</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosTabla.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -55,7 +56,7 @@
 </header>
 
 <main class="main">
-    <div class="container">
+    <div class="margenNav">
         <h1>Lista de productos</h1>
         <table align="center">
             <thead>
@@ -68,19 +69,21 @@
                 <th>Agotado</th>
             </tr>
             </thead>
+            <tbody>
             <%
                 LinkedList<JoinProductos> lista = (LinkedList)session.getAttribute("datos");
                 //System.out.println(lista);
                 if (lista != null){
                     for (JoinProductos producto : lista){
-            %><tr>
-            <td><%out.print(producto.getProducto().getNombreProducto() + " - " + producto.getProducto().getModelo());%></td>
-            <td><%out.print(producto.getMarca().getNombre());%></td>
-            <td><%out.print(producto.getAplicacion().getNombre());%></td>
-            <td><%out.print(producto.getTipo().getNombre());%></td>
-            <td><%out.print(producto.getProducto().getCantidad());%></td>
-            <td><%if (producto.getProducto().isAgotado()) out.print("Pocas existencias"); else out.print("--");%></td>
-        </tr><%
+                %><tr>
+                <td><%out.print(producto.getProducto().getNombreProducto() + " - " + producto.getProducto().getModelo());%></td>
+                <td><%out.print(producto.getMarca().getNombre());%></td>
+                <td><%out.print(producto.getAplicacion().getNombre());%></td>
+                <td><%out.print(producto.getTipo().getNombre());%></td>
+                <td><%out.print(producto.getProducto().getCantidad());%></td>
+                <td><%if (producto.getProducto().isAgotado()) out.print("Pocas existencias"); else out.print("--");%></td>
+                </tr>
+            </tbody><%
                 }
             }
             else {
@@ -91,6 +94,5 @@
         </table>
     </div>
 </main>
-
 </body>
 </html>

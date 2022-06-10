@@ -1,0 +1,41 @@
+table {
+    text-align: center;
+    border-collapse: collapse;
+    caption-side: top;
+}
+caption, td, th {
+    padding: 0.3em;
+}
+tbody {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+tbody th, tfoot th {
+    border: 0;
+}
+
+th {
+    font-family: "NEXT-ART";
+    background-color: #b4846d;
+    padding: 1em;
+}
+
+td{
+    font-family: "Montserrat";
+    font-size: 10pt;
+    background-color: #e3caa5;
+    padding: 1em;
+}
+
+tfoot {
+    text-align: center;
+    color: #555;
+    font-size: 0.8em;
+}
+
+h1{
+    font-family: "NEXT-ART";
+    font-size: 18pt;
+    text-align: center;
+    margin-top: 4rem;
+}

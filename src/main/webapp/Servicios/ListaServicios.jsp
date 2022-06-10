@@ -5,6 +5,7 @@
 <head>
     <title>Lista de servicios</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosTabla.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -55,8 +56,9 @@
 </header>
 
 <main class="main">
-    <div class="container">
-        <table>
+    <div class="margenNav">
+        <h1>Lista de servicios</h1>
+        <table align="center">
             <thead>
             <tr>
                 <th>Nombre</th>
@@ -64,6 +66,7 @@
                 <th>Descripción</th>
             </tr>
             </thead>
+            <tbody>
             <%
                 LinkedList<Servicios> lista = (LinkedList)session.getAttribute("datos");
                 //System.out.println(lista);
@@ -73,7 +76,8 @@
                         <td><%out.print(servicio.getNombreServicio());%></td>
                         <td><%out.print("$" + servicio.getPrecio());%></td>
                         <td><%out.print(servicio.getDescripcion());%></td>
-                    </tr><%
+                    </tr>
+            </tbody><%
                     }
                 }
                 else response.sendRedirect("/zulemakeup/ListaServicios");

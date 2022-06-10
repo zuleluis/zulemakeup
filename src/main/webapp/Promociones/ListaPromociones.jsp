@@ -6,6 +6,7 @@
 <head>
     <title>Lista de promociones</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosTabla.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,7 +57,7 @@
 </header>
 
 <main class="main">
-    <div class="container">
+    <div class="margenNav">
         <h1>Lista de Promociones</h1>
         <table align="center">
             <thead>
@@ -66,6 +67,7 @@
                 <th>Estado</th>
             </tr>
             </thead>
+            <tbody>
             <%
                 LinkedList<Promociones> lista = (LinkedList)session.getAttribute("datos");
                 //System.out.println(lista);
@@ -75,7 +77,9 @@
                 <td><%out.print(promocion.getNombrePromocion());%></td>
                 <td><%out.print("$" + promocion.getPrecio());%></td>
                 <td><%if (promocion.isEstado()) out.print("Activo"); else out.print("Inactivo");%></td>
-                </tr><%
+                </tr>
+            </tbody>
+                <%
                     }
                 }
                 else response.sendRedirect("/zulemakeup/ListaPromociones");
