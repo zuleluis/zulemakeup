@@ -22,6 +22,8 @@
 <main class="main">
     <div class="container">
         <form method="post" action="/zulemakeup/RegistrarPromocion">
+            <h1>AAAA</h1>
+            <h1>AAAA</h1>
             <p>Nombre <input type="text" name = "nombrePromocion"> </p>
             <p>Precio <input type="number" name = "precio"> </p>
             <p>Activo <label><input type="checkbox" name = "estado"></label> </p>

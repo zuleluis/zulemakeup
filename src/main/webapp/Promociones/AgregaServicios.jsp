@@ -25,6 +25,8 @@
 <main class="main">
     <div class="container">
         <form method="post" action="/zulemakeup/RegistrarServicios">
+            <h1>AAAA</h1>
+            <h1>AAAA</h1>
             <p>Promoción <select name="fkPromocion" >
                 <%
                 LinkedList<Promociones> promociones = (LinkedList)session.getAttribute("promociones");
