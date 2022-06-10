@@ -46,8 +46,8 @@
                     <li> <a class="menu" href="/zulemakeup/Productos/BuscarProducto.jsp">Buscar producto</a> </li>
                 </ul>
             </li>
-            <li class="navBar"> <a class="menu" href="/zulemakeup">Sobre mi</a> </li>
-            <li class="navBar"> <a class="menu" href="/zulemakeup">Contacto</a> </li>
+            <li class="navBar"> <a class="menu" href="/zulemakeup/SobreMi.jsp">Sobre mi</a> </li>
+            <li class="navBar"> <a class="menu" href="/zulemakeup/Contacto.jsp">Contacto</a> </li>
         </ul>
     </nav>
 </header>

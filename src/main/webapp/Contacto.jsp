@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zule Makeup & Beauty</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
-    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosImagen.css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
-<body>
-<header class="">
+<body class="furWallpaper">
+<header>
     <nav>
         <ul class="menu">
             <li class="navBar"> <a class="menu" href="/zulemakeup">Inicio</a> </li>
@@ -55,54 +52,10 @@
     </nav>
 </header>
 
-
-<img src="/zulemakeup/Recursos/Zule-Makeup-index.jpg" class="responsive margenNav">
-
-<div class="gridContainer">
-    <div class="gridItem1 montserrat18">
-        <a class="texto" href="/zulemakeup/Citas/ListaCitas.jsp">
-            <div class="margenSup boton">
-                Citas
-            </div>
-            <img class="responsive escala50" src="/zulemakeup/Recursos/citas.png">
-        </a>
+<main>
+    <div class="margenNav">
+        Aqui debe de ir algo xd
     </div>
-
-    <div class="gridItem2 montserrat18">
-        <a class="texto" href="/zulemakeup/Clientes/ListaClientes.jsp">
-            <div class="margenSup boton">
-                Mis clientes
-            </div>
-            <img class="responsive escala50" src="/zulemakeup/Recursos/clientes.png">
-        </a>
-    </div>
-
-    <div class="gridItem3 montserrat18">
-        <a class="texto" href="/zulemakeup/Servicios/ListaServicios.jsp">
-            <div class="margenSup boton">
-                Servicios
-            </div>
-            <img class="responsive escala50" src="/zulemakeup/Recursos/servicios.png">
-        </a>
-    </div>
-
-    <div class="gridItem4 montserrat18">
-        <a class="texto" href="/zulemakeup/Promociones/ListaPromociones.jsp">
-            <div class="margenSup boton">
-                Promociones
-            </div>
-            <img class="responsive escala50" src="/zulemakeup/Recursos/promociones.png">
-        </a>
-    </div>
-
-    <div class="gridItem5 montserrat18">
-        <a class="texto" href="/zulemakeup/Productos/ListaProductos.jsp">
-            <div class="margenSup boton">
-                Productos
-            </div>
-            <img class="responsive escala50" src="/zulemakeup/Recursos/productos.png">
-        </a>
-    </div>
-</div>
+</main>
 </body>
 </html>

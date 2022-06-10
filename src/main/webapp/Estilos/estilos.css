@@ -16,6 +16,10 @@
 
 }
 
+body{
+    background-color: #ffffff;
+}
+
 ul.menu {
     background: #7e5b51;
     list-style: none;
