@@ -57,7 +57,7 @@
     </nav>
 </header>
 
-<main class="main">
+<main class="boxContainer">
     <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarCita">
             <p>Cliente <select name="fkCliente" >
@@ -113,7 +113,7 @@
             <p>Nota <input type="text" name = "nota"> </p>
 
             <p class="center-content">
-                <input type="submit" value="Registrar"/>
+                <input class="botonSubmit" type="submit" value="Registrar"/>
             </p>
         </form>
     </div>

@@ -3,6 +3,7 @@
 <head>
     <title>Registro de promoción</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -52,15 +53,15 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarPromocion">
             <p>Nombre <input type="text" name = "nombrePromocion"> </p>
             <p>Precio <input type="number" name = "precio"> </p>
             <p>Activo <label><input type="checkbox" name = "estado"></label> </p>
 
             <p class="center-content">
-                <input type="submit" value="Registrar"/>
+                <input class="botonSubmit" type="submit" value="Registrar"/>
             </p>
         </form>
     </div>

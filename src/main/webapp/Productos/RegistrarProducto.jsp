@@ -7,6 +7,7 @@
 <head>
     <title>Registro de producto</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,8 +57,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarProducto">
             <p>Marca <select name="fkMarca" >
                 <%
@@ -105,7 +106,7 @@
             <p>Agotado <label><input type="checkbox" name = "agotado"></label> </p>
 
             <p class="center-content">
-                <input type="submit" value="Registrar"/>
+                <input class="botonSubmit" type="submit" value="Registrar"/>
             </p>
         </form>
     </div>

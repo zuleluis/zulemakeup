@@ -7,6 +7,7 @@
 <head>
     <title>Búsqueda de citas</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,12 +57,12 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarCita">
             <p>Id <input type="number" name="idcita"/></p>
             <p class="center-content">
-                <input type="submit" value="Buscar"/>
+                <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>
         </form>
         <%!
@@ -74,12 +75,12 @@
                 if (estado){
                     session.setAttribute("idCita", cita.getCita().getIdCita());
             %><tr>
-            <tr>Cliente: <%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></tr>
-            <tr>Fecha: <%out.print(cita.getCita().getFecha() + " - " + cita.getCita().getHora());%></tr>
-            <tr>Servicio a domicilio: <%if (cita.getCita().isTipoLugar()){out.print(cita.getCita().getLugar());} else out.print("No");%></tr>
-            <tr>Importe: <%out.print("$" + cita.getCita().getImporte());%></tr>
-            <tr>Nota: <%out.print(cita.getCita().getNota());%></tr>
-            <tr>Estado: <%if (cita.getCita().isBorrar()) out.print("Cancelada"); else out.print("Activa");%></tr>
+            <p>Cliente: <%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></p>
+            <p>Fecha: <%out.print(cita.getCita().getFecha() + " - " + cita.getCita().getHora());%></p>
+            <p>Servicio a domicilio: <%if (cita.getCita().isTipoLugar()){out.print(cita.getCita().getLugar());} else out.print("No");%></p>
+            <p>Importe: <%out.print("$" + cita.getCita().getImporte());%></p>
+            <p>Nota: <%out.print(cita.getCita().getNota());%></p>
+            <p>Estado: <%if (cita.getCita().isBorrar()) out.print("Cancelada"); else out.print("Activa");%></p>
 
             <p/>
             <td>Servicios: </td>
@@ -87,7 +88,7 @@
                 <%
                     if(lista != null){
                     for (CitasServicios servicio : lista){%>
-                    <tr><td><%out.print(servicio.getServicio().getNombreServicio());%></td></tr>
+                    <tr><p><%out.print(servicio.getServicio().getNombreServicio());%></p></tr>
                     <%}
                 }
                 %>
@@ -98,10 +99,10 @@
             <p/>
             <p/>
             <form method="post" action="/zulemakeup/ModificarCita">
-                <p class="center-content"><input type="submit" value="Modificar"/></p>
+                <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar"/></p>
             </form>
             <form method="post" action="/zulemakeup/CancelarCita">
-                <p class="center-content"><input type="submit" value="Cancelar cita"/></p>
+                <p class="center-content"><input class="botonSubmit" type="submit" value="Cancelar cita"/></p>
             </form>
             <%
             }

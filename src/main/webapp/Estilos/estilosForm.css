@@ -16,20 +16,38 @@
 
 }
 
+.boxContainer{
+    text-align: center;
+}
+
 .box{
     border: 2px solid #b4846d;
     border-radius: 25px;
     background: #b4846d;
     font-family: "Montserrat";
-    padding: 2rem;
+    padding: 2em;
     margin: 5rem;
-    text-align: right;
+    text-align: center;
+    display: inline-block;
 }
 
-input{
+
+.botonSubmit{
+    border: 3px solid #7e5b51;
+    border-radius: 50px;
+    background-color: #7e5b51;
+    display: inline-block;
+    padding-inline: 10px;
+    color: white;
+}
+
+input {
     font-family: Montserrat;
+    border: 3px solid #e3caa5;
+    border-radius: 50px;
 }
 
 select{
     font-family: Montserrat;
+    border: 3px solid #e3caa5;
 }
