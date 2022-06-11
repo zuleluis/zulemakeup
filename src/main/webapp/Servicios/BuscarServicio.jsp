@@ -58,7 +58,7 @@
 <main class="boxContainer">
     <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarServicio">
-            <p>Id <input type="number" name="idservicio"/></p>
+            <p>Id <input required type="number" name="idservicio"/></p>
             <p class="center-content">
                 <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>

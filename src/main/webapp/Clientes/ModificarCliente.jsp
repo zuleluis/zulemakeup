@@ -62,15 +62,15 @@
                 if (cliente != null){
             %>
             <tr>
-                <p>Nombre <input type="text" name = "nombre" value="<%out.print(cliente.getNombre());%>"> </p>
-                <p>Apellido paterno <input type="text" name = "apPaterno" value="<%out.print(cliente.getApPaterno());%>"> </p>
-                <p>Apellito materno <input type="text" name = "apMaterno" value="<%out.print(cliente.getApMaterno());%>"> </p>
-                <p>Fecha de nacimiento <input type="date" name = "fechaNac" value="<%out.print(cliente.getFechaNac());%>"> </p>
-                <p>Calle <input type="text" name = "calle" value="<%out.print(cliente.getCalle());%>"> </p>
-                <p>Numero <input type="number" name = "numero" value="<%out.print(cliente.getNumero());%>"> </p>
-                <p>Colonia <input type="text" name = "colonia" value="<%out.print(cliente.getColonia());%>"> </p>
-                <p>Ciudad <input type="text" name = "ciudad" value="<%out.print(cliente.getCiudad());%>"> </p>
-                <p>Numero telefónico <input type="text" maxlength="12" name = "numTel" value="<%out.print(cliente.getNumTel());%>"> </p>
+                <p>Nombre <input required type="text" name = "nombre" value="<%out.print(cliente.getNombre());%>"> </p>
+                <p>Apellido paterno <input required type="text" name = "apPaterno" value="<%out.print(cliente.getApPaterno());%>"> </p>
+                <p>Apellito materno <input required type="text" name = "apMaterno" value="<%out.print(cliente.getApMaterno());%>"> </p>
+                <p>Fecha de nacimiento <input required type="date" name = "fechaNac" value="<%out.print(cliente.getFechaNac());%>"> </p>
+                <p>Calle <input required type="text" name = "calle" value="<%out.print(cliente.getCalle());%>"> </p>
+                <p>Numero <input required type="number" name = "numero" value="<%out.print(cliente.getNumero());%>"> </p>
+                <p>Colonia <input required type="text" name = "colonia" value="<%out.print(cliente.getColonia());%>"> </p>
+                <p>Ciudad <input required type="text" name = "ciudad" value="<%out.print(cliente.getCiudad());%>"> </p>
+                <p>Numero telefónico <input required type="text" maxlength="12" name = "numTel" value="<%out.print(cliente.getNumTel());%>"> </p>
             </tr>
             <%
                 }

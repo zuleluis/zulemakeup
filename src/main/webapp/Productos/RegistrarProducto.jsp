@@ -74,7 +74,7 @@
                 %>
             </select>
             </p>
-            <p>Nombre <input type="text" name = "nombreProducto"> </p>
+            <p>Nombre <input required type="text" name = "nombreProducto"> </p>
             <p>Aplicación <select name="fkAplicacion" >
                 <%
                     LinkedList<Aplicacion> listaaplicacion = (LinkedList)session.getAttribute("aplicaciones");
@@ -101,8 +101,8 @@
                 %>
             </select>
             </p>
-            <p>Modelo <input type="text" name = "modelo"> </p>
-            <p>Cantidad <input type="number" name = "cantidad"> </p>
+            <p>Modelo <input required type="text" name = "modelo"> </p>
+            <p>Cantidad <input required type="number" name = "cantidad"> </p>
             <p>Agotado <label><input type="checkbox" name = "agotado"></label> </p>
 
             <p class="center-content">

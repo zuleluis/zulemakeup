@@ -78,7 +78,7 @@
                         }%>
                     </select>
                 </p>
-                <p>Nombre <input type="text" name = "nombreProducto" value="<%out.print(producto.getNombreProducto());%>"> </p>
+                <p>Nombre <input required type="text" name = "nombreProducto" value="<%out.print(producto.getNombreProducto());%>"> </p>
                 <p>Aplicación
                     <select name="fkAplicacion" >
                         <%if(listaAplicacion != null){
@@ -97,8 +97,8 @@
                         }%>
                     </select>
                 </p>
-                <p>Modelo <input type="text" name = "modelo" value="<%out.print(producto.getModelo());%>"> </p>
-                <p>Cantidad <input type="number" name = "cantidad" value="<%out.print(producto.getCantidad());%>"> </p>
+                <p>Modelo <input required type="text" name = "modelo" value="<%out.print(producto.getModelo());%>"> </p>
+                <p>Cantidad <input required type="number" name = "cantidad" value="<%out.print(producto.getCantidad());%>"> </p>
                 <p>Agotado <% if (producto.isAgotado()){%> <label><input type="checkbox" name = "agotado" checked></label> <%} else %> <label><input type="checkbox" name = "agotado"></label></p>
             </tr>
 

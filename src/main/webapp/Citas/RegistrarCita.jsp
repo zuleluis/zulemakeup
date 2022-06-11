@@ -74,10 +74,10 @@
                     %>
                 </select>
             </p>
-            <p>Fecha <input type="date" name = "fecha"> </p>
-            <p>Hora <input type="time" name = "hora"> </p>
+            <p>Fecha <input required type="date" name = "fecha"> </p>
+            <p>Hora <input required type="time" name = "hora"> </p>
             <p>A domicilio <label><input type="checkbox" name = "tipoLugar"></label> </p>
-            <p>Lugar <input type="text" name = "lugar"> </p>
+            <p>Lugar <input required type="text" name = "lugar"> </p>
             <p>Promoción <select name="fkPromocion" >
                 <%
                     LinkedList<Promociones> lista = (LinkedList)session.getAttribute("promociones");
@@ -109,8 +109,8 @@
                     %>
                 </select>
             </p>
-            <p>Importe <input type="number" name = "importe"> </p>
-            <p>Nota <input type="text" name = "nota"> </p>
+            <p>Importe <input required type="number" name = "importe"> </p>
+            <p>Nota <input required type="text" name = "nota"> </p>
 
             <p class="center-content">
                 <input class="botonSubmit" type="submit" value="Registrar"/>

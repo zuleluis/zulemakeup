@@ -60,7 +60,7 @@
 <main class="boxContainer">
     <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarCita">
-            <p>Id <input type="number" name="idcita"/></p>
+            <p>Id <input required type="number" name="idcita"/></p>
             <p class="center-content">
                 <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>

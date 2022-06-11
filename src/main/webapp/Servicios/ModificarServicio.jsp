@@ -63,9 +63,9 @@
                 if (servicio != null){
             %>
             <tr>
-                <p>Nombre <input type="text" name = "nombreServicio" value="<%out.print(servicio.getNombreServicio());%>"> </p>
-                <p>Precio <input type="number" name = "precio" value="<%out.print(servicio.getPrecio());%>"> </p>
-                <p>Descripcion <input type="text" name = "descripcion" value="<%out.print(servicio.getDescripcion());%>"> </p>
+                <p>Nombre <input required type="text" name = "nombreServicio" value="<%out.print(servicio.getNombreServicio());%>"> </p>
+                <p>Precio <input required type="number" name = "precio" value="<%out.print(servicio.getPrecio());%>"> </p>
+                <p>Descripcion <input required type="text" name = "descripcion" value="<%out.print(servicio.getDescripcion());%>"> </p>
 
             </tr>
             <%

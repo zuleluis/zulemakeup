@@ -62,8 +62,8 @@
                 if (promocion != null){
             %>
             <tr>
-                <p>Nombre <input type="text" name = "nombrePromocion" value="<%out.print(promocion.getNombrePromocion());%>"> </p>
-                <p>Precio <input type="number" name = "precio" value="<%out.print(promocion.getPrecio());%>"> </p>
+                <p>Nombre <input required type="text" name = "nombrePromocion" value="<%out.print(promocion.getNombrePromocion());%>"> </p>
+                <p>Precio <input required type="number" name = "precio" value="<%out.print(promocion.getPrecio());%>"> </p>
                 <p>Disponibilidad <% if (promocion.isEstado()){%> <label><input type="checkbox" name = "estado" checked></label> <%} else %> <label><input type="checkbox" name = "estado"></label></p>
 
             </tr>

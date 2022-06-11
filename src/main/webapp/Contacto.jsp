@@ -3,6 +3,7 @@
 <head>
     <title>Contacto</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosZule.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body class="furWallpaper">
@@ -53,8 +54,14 @@
 </header>
 
 <main>
-    <div class="margenNav">
-        Aqui debe de ir algo xd
+    <div class="margenNav box">
+        <div class="cajaTextoFull">
+            <p class="titulo">Contacto</p>
+            <p class="textoCentrado">Contáctame a través de</p>
+            <p class="textoCentrado">Instagram: @zulemakp</p>
+            <p class="textoCentrado">Correo: zuleluiscruz@gmail.com</p>
+            <p class="textoCentrado">Teléfono: 229 461 3993</p>
+        </div>
     </div>
 </main>
 </body>

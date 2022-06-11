@@ -67,12 +67,12 @@
             if (cita != null){
         %>
         <tr>
-            <p>Fecha <input type="date" name = "fecha" value="<%out.print(cita.getCita().getFecha());%>"> </p>
-            <p>Hora <input type="time" name = "hora" value="<%out.print(cita.getCita().getHora());%>"> </p>
+            <p>Fecha <input required type="date" name = "fecha" value="<%out.print(cita.getCita().getFecha());%>"> </p>
+            <p>Hora <input required type="time" name = "hora" value="<%out.print(cita.getCita().getHora());%>"> </p>
             <p>Servicio a domicilio <% if (cita.getCita().isTipoLugar()){%> <label><input type="checkbox" name = "tipoLugar" checked></label> <%} else %> <label><input type="checkbox" name = "tipoLugar"></label></p>
-            <p>Lugar <input type="text" name = "lugar" value="<%out.print(cita.getCita().getLugar());%>"> </p>
-            <p>Importe <input type="number" name = "importe" value="<%out.print(cita.getCita().getImporte());%>"> </p>
-            <p>Nota <input type="text" name = "nota" value="<%out.print(cita.getCita().getNota());%>"> </p>
+            <p>Lugar <input required type="text" name = "lugar" value="<%out.print(cita.getCita().getLugar());%>"> </p>
+            <p>Importe <input required type="number" name = "importe" value="<%out.print(cita.getCita().getImporte());%>"> </p>
+            <p>Nota <input required type="text" name = "nota" value="<%out.print(cita.getCita().getNota());%>"> </p>
 
             <p/>
             <td>Servicios: </td>

@@ -57,9 +57,9 @@
 <main class="boxContainer">
     <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarServicio">
-            <p>Nombre <input type="text" name = "nombreServicio"> </p>
-            <p>Precio <input type="number" name = "precio"> </p>
-            <p>Descripción <input type="text" name = "descripcion"> </p>
+            <p>Nombre <input required type="text" name = "nombreServicio"> </p>
+            <p>Precio <input required type="number" name = "precio"> </p>
+            <p>Descripción <input required type="text" name = "descripcion"> </p>
 
             <p class="center-content">
                 <input class="botonSubmit" type="submit" value="Registrar"/>
