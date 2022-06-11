@@ -161,6 +161,24 @@ public class CitasDAO {
         return idCita;
     }
 
+    /*//Calcula el importe de una cita
+    public float calculImporte (int idCita) throws SQLException{
+        this.ps = this.connection.prepareStatement("SELECT Citas.idCita, SUM(Promociones.precio + Servicios.precio) as Importe FROM Citas\n" +
+                "JOIN Promociones on Citas.fkPromocion = Promociones.idPromocion\n" +
+                "JOIN CitasServicios on CitasServicios.fkCita = Citas.idCita\n" +
+                "JOIN Servicios on CitasServicios.fkServicio = Servicios.idServicio\n" +
+                "GROUP BY idCita");
+
+        this.rs = ps.executeQuery();
+
+        float importe = rs.getFloat("Importe");
+
+        Conexion.close(rs);
+        Conexion.close(ps);
+
+        return importe;
+    }*/
+
     //Elimina una cita. En realidad realizo un safe delete, para no borrar por completo los registros, solo "deshabilitarlos"
     public Citas eliminaCita (int idCita) throws SQLException{
         Citas auxCita = getCitaPrimitiva(idCita);
