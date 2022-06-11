@@ -56,7 +56,7 @@
 </header>
 
 
-<img src="/zulemakeup/Recursos/Zule-Makeup-index.jpg" class="responsive margenNav">
+<img src="/zulemakeup/Recursos/Zule-Makeup-index2.jpg" class="responsive margenNav">
 
 <div class="gridContainer">
     <div class="gridItem1 montserrat18">

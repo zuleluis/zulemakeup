@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "NEXT-ART";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../Fuentes/NEXT-ART_Regular.woff") format("woff"),
+    url("../Fuentes/NEXT ART_Regular.woff2") format("woff2");
+
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../Fuentes/Montserrat-Regular.woff") format("woff"),
+    url("../Fuentes/Montserrat-Regular.woff2") format("woff2");
+
+}
+
+.box{
+    border: 2px solid #b4846d;
+    border-radius: 25px;
+    background: #b4846d;
+    font-family: "Montserrat";
+    padding: 2rem;
+    margin: 5rem;
+    text-align: right;
+}
+
+input{
+    font-family: Montserrat;
+}
+
+select{
+    font-family: Montserrat;
+}

@@ -7,6 +7,7 @@
 <head>
     <title>Registro de citas</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -57,7 +58,7 @@
 </header>
 
 <main class="main">
-    <div class="margenSup">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarCita">
             <p>Cliente <select name="fkCliente" >
                     <%

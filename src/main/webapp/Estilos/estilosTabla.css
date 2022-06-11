@@ -1,3 +1,21 @@
+@font-face {
+    font-family: "NEXT-ART";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../Fuentes/NEXT-ART_Regular.woff") format("woff"),
+    url("../Fuentes/NEXT ART_Regular.woff2") format("woff2");
+
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../Fuentes/Montserrat-Regular.woff") format("woff"),
+    url("../Fuentes/Montserrat-Regular.woff2") format("woff2");
+
+}
+
 table {
     text-align: center;
     border-collapse: collapse;
