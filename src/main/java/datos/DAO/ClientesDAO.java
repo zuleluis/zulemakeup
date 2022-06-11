@@ -71,7 +71,7 @@ public class ClientesDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println("El cliente es:" + auxCliente.getNombre() + " " + auxCliente.getApPaterno() + " " + auxCliente.getApMaterno());
+        /*System.out.println("El cliente es:" + auxCliente.getNombre() + " " + auxCliente.getApPaterno() + " " + auxCliente.getApMaterno());*/
 
         return auxCliente;
     }

@@ -36,6 +36,6 @@ public class EliminarServicios extends HttpServlet {
         } catch (SQLException e){
             e.printStackTrace();
         }
-        response.sendRedirect("/zulemakeup/Promociones/Promociones.jsp");
+        response.sendRedirect("/zulemakeup/Promociones/ListaPromociones.jsp");
     }
 }

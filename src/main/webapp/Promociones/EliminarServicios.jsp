@@ -5,6 +5,7 @@
 <head>
     <title>Eliminar servicios</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -54,12 +55,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <h1>Lista de Promociones</h1>
-    <h1>Lista de Promociones</h1>
-    <h1>Lista de Promociones</h1><h1>Lista de Promociones</h1>
-
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/EliminarServicios">
             <p>Servicios
                 <select name="fkServicio" multiple>
@@ -78,7 +75,7 @@
             </table>
             </p>
             <p class="center-content">
-                <input type="submit" value="Eliminar servicios"/>
+                <input class="botonSubmit" type="submit" value="Eliminar servicios"/>
             </p>
         </form>
     </div>

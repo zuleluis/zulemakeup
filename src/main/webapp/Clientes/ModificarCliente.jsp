@@ -4,6 +4,7 @@
 <head>
     <title>Modificar cliente</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -53,8 +54,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/ModificarCliente">
             <%
                 Clientes cliente = (Clientes) session.getAttribute("datos");
@@ -76,7 +77,7 @@
                 session.removeAttribute("datos");
             %>
             <p class="center-content">
-                <input type="submit" value="Modificar"/>
+                <input class="botonSubmit" type="submit" value="Modificar"/>
             </p>
         </form>
     </div>

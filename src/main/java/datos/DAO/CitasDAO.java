@@ -359,9 +359,9 @@ public class CitasDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        for(Citas elemento: lista){
+        /*for(Citas elemento: lista){
             System.out.println(elemento);
-        }
+        }*/
 
         return lista;
     }

@@ -6,6 +6,7 @@
 <head>
     <title>Agrega servicios</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -55,11 +56,9 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/RegistrarServicios">
-            <h1>AAAA</h1>
-            <h1>AAAA</h1>
             <p>Promoción <select name="fkPromocion" >
                 <%
                 LinkedList<Promociones> promociones = (LinkedList)session.getAttribute("promociones");
@@ -86,7 +85,7 @@
             </select>
             </p>
             <p class="center-content">
-                <input type="submit" value="Agregar"/>
+                <input class="botonSubmit" type="submit" value="Agregar"/>
             </p>
         </form>
     </div>

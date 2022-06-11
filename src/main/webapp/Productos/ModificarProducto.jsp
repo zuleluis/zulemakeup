@@ -8,6 +8,7 @@
 <head>
     <title>Modificar Producto</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -57,8 +58,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/ModificarProducto">
             <%
                 Productos producto = (Productos) session.getAttribute("datos");
@@ -109,7 +110,7 @@
                 session.removeAttribute("tipos");
             %>
             <p class="center-content">
-                <input type="submit" value="Modificar"/>
+                <input class="botonSubmit" type="submit" value="Modificar"/>
             </p>
         </form>
     </div>

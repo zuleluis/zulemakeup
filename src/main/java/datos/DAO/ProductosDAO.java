@@ -64,7 +64,7 @@ public class ProductosDAO {
 
         for(JoinProductos elemento: lista){
             String disponibilidad = (elemento.getProducto().isAgotado())? "Agotado" :"Disponible";
-            System.out.println(elemento.getMarca().getNombre() + " - " + elemento.getProducto().getNombreProducto() + " - " + elemento.getAplicacion().getNombre() + " - " + elemento.getTipo().getNombre() + " - " + elemento.getProducto().getModelo() + " - " + elemento.getProducto().getCantidad() + " - " + disponibilidad);
+            /*System.out.println(elemento.getMarca().getNombre() + " - " + elemento.getProducto().getNombreProducto() + " - " + elemento.getAplicacion().getNombre() + " - " + elemento.getTipo().getNombre() + " - " + elemento.getProducto().getModelo() + " - " + elemento.getProducto().getCantidad() + " - " + disponibilidad);*/
             //System.out.println(elemento.getMarca() + " - " + elemento.getProducto() + " - " +  elemento.getAplicacion() + " - " + elemento.getTipo());
         }
 
@@ -100,7 +100,7 @@ public class ProductosDAO {
 
         //System.out.println(auxProducto);
         String disponibilidad = (auxProducto.getProducto().isAgotado())? "Agotado" :"Disponible";
-        System.out.println(auxProducto.getMarca().getNombre() + " - " + auxProducto.getProducto().getNombreProducto() + " - " + auxProducto.getAplicacion().getNombre() + " - " + auxProducto.getTipo().getNombre() + " - " + auxProducto.getProducto().getModelo() + " - " + auxProducto.getProducto().getCantidad() + " - " + disponibilidad);
+        /*System.out.println(auxProducto.getMarca().getNombre() + " - " + auxProducto.getProducto().getNombreProducto() + " - " + auxProducto.getAplicacion().getNombre() + " - " + auxProducto.getTipo().getNombre() + " - " + auxProducto.getProducto().getModelo() + " - " + auxProducto.getProducto().getCantidad() + " - " + disponibilidad);*/
 
         return auxProducto;
     }
@@ -122,7 +122,7 @@ public class ProductosDAO {
         Conexion.close(rs);
         Conexion.close(ps);
 
-        System.out.println(auxProducto);
+        //System.out.println(auxProducto);
         return auxProducto;
     }
 

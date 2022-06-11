@@ -7,6 +7,7 @@
 <head>
     <title>Modificar cita</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -56,8 +57,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/ModificarCita">
         <%
             JoinCitas cita = (JoinCitas) session.getAttribute("datos");
@@ -79,7 +80,7 @@
                 <%
                     if(lista != null){
                         for (CitasServicios servicio : lista){%>
-                <tr><td><%out.print(servicio.getServicio().getNombreServicio());%></td></tr>
+                <tr><p><%out.print(servicio.getServicio().getNombreServicio());%></p></tr>
                 <%}
                 }%>
             </table>
@@ -100,7 +101,7 @@
             session.removeAttribute("promociones");
         %>
         <p class="center-content">
-            <input type="submit" value="Modificar"/>
+            <input class="botonSubmit" type="submit" value="Modificar"/>
         </p>
     </form>
     </div>
