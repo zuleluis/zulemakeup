@@ -6,6 +6,7 @@
 <head>
     <title>Busqueda de promoción</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -55,16 +56,12 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarPromocion">
             <p>Id <input type="number" name="idpromocion"/></p>
             <p class="center-content">
-                <input type="submit" value="Buscar"/>
+                <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>
         </form>
             <%
@@ -76,15 +73,15 @@
                 if (estado){
                     session.setAttribute("idPromocion", promocion.getIdPromocion());
                 %>  <tr>
-                    <tr>Nombre: <%out.print(promocion.getNombrePromocion());%></tr>
-                    <tr>Precio: <%out.print(promocion.getPrecio());%></tr>
-                    <tr>Estado: <%if (promocion.isEstado()) out.print("Activa"); else out.print("Inactiva");%></tr>
+                    <p>Nombre: <%out.print(promocion.getNombrePromocion());%></p>
+                    <p>Precio: <%out.print(promocion.getPrecio());%></p>
+                    <p>Estado: <%if (promocion.isEstado()) out.print("Activa"); else out.print("Inactiva");%></p>
                     <p/>
                     <td>Servicios: </td>
                     <table><%
                         if(lista != null){
                             for (PromoServicios servicio : lista){%>
-                                <tr><td><%out.print(servicio.getServicio().getNombreServicio());%></td></tr>
+                                <tr><p><%out.print(servicio.getServicio().getNombreServicio());%></p></tr>
                             <%}
                         }
                     %></table>
@@ -92,18 +89,14 @@
                     </tr>
                     <p/>
                     <p/>
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
-        <h1>Lista de Promociones</h1>
                     <form method="post" action="/zulemakeup/ModificarPromocion">
-                        <p class="center-content"><input type="submit" value="Modificar datos"/></p>
+                        <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar datos"/></p>
                     </form>
                     <form method="get" action="/zulemakeup/MapeoServicios">
-                        <p class="center-content"><input type="submit" value="Modificar servicios"/></p>
+                        <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar servicios"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarPromocion">
-                        <p class="center-content"><input type="submit" value="Eliminar promocion"/></p>
+                        <p class="center-content"><input class="botonSubmit" type="submit" value="Eliminar promocion"/></p>
                     </form>
                     <%
                     }

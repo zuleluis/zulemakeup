@@ -5,6 +5,7 @@
 <head>
     <title>Buscar producto</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -54,12 +55,12 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarProducto">
             <p>Id <input type="number" name="idproducto"/></p>
             <p class="center-content">
-                <input type="submit" value="Buscar"/>
+                <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>
         </form>
 
@@ -72,21 +73,21 @@
                 if (estado){
                     session.setAttribute("idProducto", producto.getProducto().getIdProducto());
         %><tr>
-            <tr>Producto: <%out.print(producto.getProducto().getNombreProducto());%></tr>
-            <tr>Marca: <%out.print(producto.getMarca().getNombre());%></tr>
-            <tr>Modelo: <%out.print(producto.getProducto().getModelo());%></tr>
-            <tr>Tipo de producto: <%out.print(producto.getTipo().getNombre());%></tr>
-            <tr>Aplicación: <%out.print(producto.getAplicacion().getNombre());%></tr>
-            <tr>Cantidad: <%out.print(producto.getProducto().getCantidad());%></tr>
-            <tr>Disponibilidad: <%if (producto.getProducto().isAgotado()) out.print("Agotado"); else out.print("Disponible");%></tr>
+            <p>Producto: <%out.print(producto.getProducto().getNombreProducto());%></p>
+            <p>Marca: <%out.print(producto.getMarca().getNombre());%></p>
+            <p>Modelo: <%out.print(producto.getProducto().getModelo());%></p>
+            <p>Tipo de producto: <%out.print(producto.getTipo().getNombre());%></p>
+            <p>Aplicación: <%out.print(producto.getAplicacion().getNombre());%></p>
+            <p>Cantidad: <%out.print(producto.getProducto().getCantidad());%></p>
+            <p>Disponibilidad: <%if (producto.getProducto().isAgotado()) out.print("Agotado"); else out.print("Disponible");%></p>
         </tr>
             <p/>
             <p/>
             <form method="post" action="/zulemakeup/ModificarProducto">
-                <p class="center-content"><input type="submit" value="Modificar"/></p>
+                <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar"/></p>
             </form>
             <form method="post" action="/zulemakeup/EliminarProducto">
-                <p class="center-content"><input type="submit" value="Eliminar"/></p>
+                <p class="center-content"><input class="botonSubmit" type="submit" value="Eliminar"/></p>
             </form>
             <%
             }

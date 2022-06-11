@@ -6,6 +6,7 @@
 <head>
     <title>Búsqueda de cliente</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -55,12 +56,12 @@
     </nav>
 </header>
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarCliente">
             <p>Id <input type="number" name="idcliente"/></p>
             <p class="center-content">
-                <input type="submit" value="Buscar"/>
+                <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>
         </form>
         <%!
@@ -73,11 +74,11 @@
                 if (estado){
                     session.setAttribute("idCliente", cliente.getIdCliente());
                     %><tr>
-                        <td>Nombre: <%out.print(cliente.getNombre() + " " +  cliente.getApPaterno() + " " + cliente.getApMaterno());%></td>
-                        <td>Fecha de nacimiento: <%out.print(cliente.getFechaNac());%></td>
-                        <td>Dirección: <%out.print(cliente.getCalle() + " " + cliente.getNumero() + " " + cliente.getColonia());%></td>
-                        <td>Ciudad: <%out.print(cliente.getCiudad());%></td>
-                        <td>Teléfono: <%out.print(cliente.getNumTel());%></td>
+                        <p>Nombre: <%out.print(cliente.getNombre() + " " +  cliente.getApPaterno() + " " + cliente.getApMaterno());%></p>
+                        <p>Fecha de nacimiento: <%out.print(cliente.getFechaNac());%></p>
+                        <p>Dirección: <%out.print(cliente.getCalle() + " " + cliente.getNumero() + " " + cliente.getColonia());%></p>
+                        <p>Ciudad: <%out.print(cliente.getCiudad());%></p>
+                        <p>Teléfono: <%out.print(cliente.getNumTel());%></p>
                     </tr>
                     <p/>
                     <p/>
@@ -85,20 +86,19 @@
                     <table>
                         <%if(citas != null){
                             for (Citas cita : citas){%>
-                                <td><%out.print(cita.getFecha());%></td>
-                                <td><%out.print(cita.getHora());%></td>
-                                <td><%if (cita.isBorrar()) out.print("  - Cancelada");%></td>
-                                <tr/>
+                            <tr>
+                                <p><%out.print(cita.getFecha() + " - " + cita.getHora());if (cita.isBorrar()) out.print("  - Cancelada");%></p>
+                            </tr>
                             <%}
                         }%>
                     </table>
                     <p/>
                     <p/>
                     <form method="post" action="/zulemakeup/ModificarCliente">
-                        <p class="center-content"><input type="submit" value="Modificar"/></p>
+                        <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar"/></p>
                     </form>
                     <form method="post" action="/zulemakeup/EliminarCliente">
-                        <p class="center-content"><input type="submit" value="Eliminar"/></p>
+                        <p class="center-content"><input class="botonSubmit" type="submit" value="Eliminar"/></p>
                     </form>
                     <%
                 }

@@ -4,6 +4,7 @@
 <head>
     <title>Buscar servicio</title>
     <link rel="stylesheet" href="/zulemakeup/Estilos/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/zulemakeup/Estilos/estilosForm.css" type="text/css">
     <link rel="icon" href="/zulemakeup/Recursos/favicon.ico">
 </head>
 <body>
@@ -54,12 +55,12 @@
 </header>
 
 
-<main class="main">
-    <div class="container">
+<main class="boxContainer">
+    <div class="margenNav box">
         <form method="post" action="/zulemakeup/BuscarServicio">
             <p>Id <input type="number" name="idservicio"/></p>
             <p class="center-content">
-                <input type="submit" value="Buscar"/>
+                <input class="botonSubmit" type="submit" value="Buscar"/>
             </p>
         </form>
 
@@ -72,17 +73,17 @@
                     session.setAttribute("idServicio", servicio.getIdServicio());
                     %>
                         <tr>
-                            <tr>Nombre:<%out.print(servicio.getNombreServicio());%></tr>
-                            <tr>Precio:<%out.print(servicio.getPrecio());%></tr>
-                            <tr>Descripción:<%out.print(servicio.getDescripcion());%></tr>
+                            <p>Nombre: <%out.print(servicio.getNombreServicio());%></p>
+                            <p>Precio: <%out.print(servicio.getPrecio());%></>
+                            <p>Descripción: <%out.print(servicio.getDescripcion());%></p>
                         </tr>
                         <p/>
                         <p/>
                         <form method="post" action="/zulemakeup/ModificarServicio">
-                            <p class="center-content"><input type="submit" value="Modificar"/></p>
+                            <p class="center-content"><input class="botonSubmit" type="submit" value="Modificar"/></p>
                         </form>
                         <form method="post" action="/zulemakeup/EliminarServicio">
-                            <p class="center-content"><input type="submit" value="Eliminar"/></p>
+                            <p class="center-content"><input class="botonSubmit" type="submit" value="Eliminar"/></p>
                         </form>
                     <%
                 }
