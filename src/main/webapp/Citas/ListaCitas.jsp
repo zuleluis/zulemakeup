@@ -62,6 +62,7 @@
         <table align="center">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Fecha</th>
                     <th>Lugar</th>
@@ -77,9 +78,10 @@
                 if (lista != null){
                     for (JoinCitas cita : lista){
             %><tr>
+                <td><%out.print(cita.getCita().getIdCita());%></td>
                 <td><%out.print(cita.getCliente().getNombre() + " " +  cita.getCliente().getApPaterno() + " " + cita.getCliente().getApMaterno());%></td>
                 <td><%out.print(cita.getCita().getFecha() + " , " + cita.getCita().getHora());%></td>
-                <td><%if (cita.getCita().isTipoLugar() == false) out.print("Visita en casa"); else out.print(cita.getCita().getLugar());%></td>
+                <td><%if (cita.getCita().isTipoLugar() == false) out.print("*"); else out.print(cita.getCita().getLugar());%></td>
                 <td><%out.print(cita.getPromocion().getNombrePromocion());%></td>
                 <td><%out.print(cita.getCita().getImporte());%></td>
                 <td><%out.print(cita.getCita().getNota());%></td>

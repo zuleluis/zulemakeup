@@ -28,13 +28,14 @@ public class CitasDAO {
     public LinkedList<JoinCitas> getCitas() throws SQLException{
         LinkedList<JoinCitas> lista = new LinkedList<>();
 
-        this.ps = this.connection.prepareStatement("SELECT Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
+        this.ps = this.connection.prepareStatement("SELECT Citas.idCita, Clientes.nombre, Clientes.apPaterno, Clientes.apMaterno, Citas.fecha, Citas.hora, Citas.tipoLugar, Citas.lugar, Promociones.nombrePromocion, Citas.importe, Citas.nota, Citas.borrar FROM Citas\n" +
                 "JOIN Clientes ON Citas.fkCliente = Clientes.idCliente\n" +
                 "JOIN Promociones ON Citas.fkPromocion = Promociones.idPromocion\n" +
                 "ORDER BY Citas.fecha, Citas.hora");
         this.rs = ps.executeQuery();
 
         while (rs.next()){
+            int idCita = rs.getInt("idCita");
             String nombre = rs.getString("nombre");
             String apPaterno = rs.getString("apPaterno");
             String apMaterno = rs.getString("apMaterno");
@@ -50,7 +51,7 @@ public class CitasDAO {
             float importe = rs.getFloat("importe");
             String nota = rs.getString("nota");
             boolean borrar = rs.getBoolean("borrar");
-            cita = new Citas(fecha, hora, tipoLugar, lugar, importe, nota, borrar);
+            cita = new Citas(idCita, fecha, hora, tipoLugar, lugar, importe, nota, borrar);
 
             JoinCitas auxCita = new JoinCitas(cliente, promocion, cita);
             lista.add(auxCita);

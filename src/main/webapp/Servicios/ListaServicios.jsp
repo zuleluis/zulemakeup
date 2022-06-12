@@ -61,6 +61,7 @@
         <table align="center">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Descripción</th>
@@ -73,6 +74,7 @@
                 if (lista != null){
                     for (Servicios servicio : lista){
                     %><tr>
+                        <td><%out.print(servicio.getIdServicio());%></td>
                         <td><%out.print(servicio.getNombreServicio());%></td>
                         <td><%out.print("$" + servicio.getPrecio());%></td>
                         <td><%out.print(servicio.getDescripcion());%></td>

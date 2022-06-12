@@ -62,6 +62,7 @@
         <table align="center">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Estado</th>
@@ -74,6 +75,7 @@
                 if (lista != null){
                     for (Promociones promocion : lista){
             %><tr>
+                <td><%out.print(promocion.getIdPromocion());%></td>
                 <td><%out.print(promocion.getNombrePromocion());%></td>
                 <td><%out.print("$" + promocion.getPrecio());%></td>
                 <td><%if (promocion.isEstado()) out.print("Activo"); else out.print("Inactivo");%></td>

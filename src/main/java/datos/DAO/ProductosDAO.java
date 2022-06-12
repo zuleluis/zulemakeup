@@ -30,7 +30,7 @@ public class ProductosDAO {
     public LinkedList<JoinProductos> getProductos() throws SQLException {
         LinkedList<JoinProductos> lista = new LinkedList<>();
 
-        this.ps = this.connection.prepareStatement("SELECT Marcas.nombre AS Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
+        this.ps = this.connection.prepareStatement("SELECT Productos.idProducto, Marcas.nombre AS Marca, Productos.nombreProducto, Aplicacion.nombre as Aplicacion, Tipos.nombre as Tipo, Productos.modelo, Productos.cantidad, Productos.agotado FROM Productos\n" +
                 "JOIN Marcas ON Productos.fkMarca = Marcas.idMarca\n" +
                 "JOIN Aplicacion ON Productos.fkAplicacion = Aplicacion.idAplicacion\n" +
                 "JOIN Tipos ON Productos.fkTipo = Tipos.idTipo\n");
@@ -46,12 +46,13 @@ public class ProductosDAO {
             String nombreAplicacion = rs.getString("Aplicacion");
             aplicacion = new Aplicacion(nombreAplicacion);
 
+            int idProducto = rs.getInt("idProducto");
             String nombreProducto = rs.getString("nombreProducto");
             String modelo = rs.getString("modelo");
             int cantidad = rs.getInt("cantidad");
             boolean agotado = rs.getBoolean("agotado");
 
-            producto = new Productos(nombreProducto, modelo, cantidad, agotado);
+            producto = new Productos(idProducto, nombreProducto, modelo, cantidad, agotado);
 
             JoinProductos auxProducto = new JoinProductos(producto, marca, tipo, aplicacion);
             lista.add(auxProducto);

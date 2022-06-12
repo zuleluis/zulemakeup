@@ -61,6 +61,7 @@
         <table align="center">
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Lugar de aplicación</th>
@@ -76,6 +77,7 @@
                 if (lista != null){
                     for (JoinProductos producto : lista){
                 %><tr>
+                <td><%out.print(producto.getProducto().getIdProducto());%></td>
                 <td><%out.print(producto.getProducto().getNombreProducto() + " - " + producto.getProducto().getModelo());%></td>
                 <td><%out.print(producto.getMarca().getNombre());%></td>
                 <td><%out.print(producto.getAplicacion().getNombre());%></td>
